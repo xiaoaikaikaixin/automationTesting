@@ -1,0 +1,112 @@
+{
+  "pkgName": "midscene-unknown-package-name",
+  "pkgVersion": "0.0.0",
+  "cacheId": "e2e-testCase-tradingSlip-TS-07-CreatePresoldOrder.spec.ts(Create-Presold---Offshore-Order)",
+  "aiTasks": [
+    {
+      "prompt": "scroll to the right to stop at the 'Buyer Goods Description' column",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&ID=60624",
+            "size": {
+              "width": 1265,
+              "height": 585,
+              "dpr": 1.5
+            }
+          },
+          "prompt": "scroll to the right to stop at the 'Buyer Goods Description' column @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Scroll",
+                "thought": "Scroll to the right to make the 'Buyer Goods Description' column visible.",
+                "param": {
+                  "direction": "right",
+                  "scrollType": "untilLeft"
+                },
+                "locate": {
+                  "id": "kagmm",
+                  "prompt": "Buyer Goods Description column header"
+                }
+              }
+            ],
+            "log": "Scrolling to the right to make the 'Buyer Goods Description' column visible.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Scroll\",\n      \"thought\": \"Scroll to the right to make the 'Buyer Goods Description' column visible.\",\n      \"param\": {\n        \"direction\": \"right\",\n        \"scrollType\": \"untilLeft\"\n      },\n      \"locate\": {\n        \"id\": \"kagmm\",\n        \"prompt\": \"Buyer Goods Description column header\"\n      }\n    }\n  ],\n  \"log\": \"Scrolling to the right to make the 'Buyer Goods Description' column visible.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 151,
+              "prompt_tokens": 6638,
+              "total_tokens": 7044
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&ID=60624",
+            "size": {
+              "width": 1265,
+              "height": 585,
+              "dpr": 1.5
+            }
+          },
+          "prompt": "Buyer Goods Description column header",
+          "response": {
+            "elements": [
+              {
+                "id": "kagmm"
+              }
+            ]
+          },
+          "element": {
+            "id": "kagmm",
+            "indexId": 55,
+            "center": [
+              1392,
+              281
+            ],
+            "rect": {
+              "left": 1348,
+              "top": 262,
+              "width": 89,
+              "height": 39,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "scroll vertically to ensure the 'Buyer Goods Description' field is visible",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&ID=60624",
+            "size": {
+              "width": 1265,
+              "height": 585,
+              "dpr": 1.5
+            }
+          },
+          "prompt": "scroll vertically to ensure the 'Buyer Goods Description' field is visible @ ",
+          "response": {
+            "actions": [],
+            "log": "The 'Buyer Goods Description' field is already visible on the page.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [],\n  \"log\": \"The 'Buyer Goods Description' field is already visible on the page.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 55,
+              "prompt_tokens": 6631,
+              "total_tokens": 6788
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,327 @@
+{
+  "tests": [
+    {
+      "name": "Freight Charge creation with Shipping term Port to Port",
+      "path": "../e2e/testCase/freightCharge/FC-01-freightChargewithPortToPort.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 1,
+      "tags": ["order", "workflow", "critical"]
+    },
+    {
+      "name": "Freight Charge creation with Shipping term Door to Door",
+      "path": "../e2e/testCase/freightCharge/FC-02-freightChargewithDoorToDoor.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 2,
+      "tags": ["order", "workflow", "critical"]
+    },
+        {
+      "name": "Freight Charge creation with Delivery Mode Bulk",
+      "path": "../e2e/testCase/freightCharge/FC-03-freightChargeBulkDeliveryMode.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 3,
+      "tags": ["order", "workflow", "critical"]
+    },
+        {
+      "name": "Create Normal Trading Slip",
+      "path": "../e2e/testCase/tradingSlip/TS-01-CreateNormalOrderWithBasisCD1.spec.ts",
+      "enabled": true,
+      "dependencies": [],
+      "priority": 1,
+      "tags": ["order", "workflow", "critical"]
+    },
+    {
+      "name": "Create Normal order with Basis is C&D",
+      "path": "../e2e/example/TS-01-CreateTradubgSlip.spec.ts",
+      "enabled": true,
+      "dependencies": [],
+      "priority": 4,
+      "tags": ["order", "workflow", "critical"]
+    },
+        {
+      "name": "Create Normal order without Freight Charge",
+      "path": "../e2e/testCase/tradingSlip/TS-02-CreateNormalOrderWihtoutFC.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 5,
+      "tags": ["order", "workflow", "critical"]
+    },
+    {
+      "name": "Create Normal order with FB Arranged by Supplier",
+      "path": "../e2e/testCase/tradingSlip/TS-03-CreateNormalOrderWithFBArrangedBySupplier.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 6,
+      "tags": ["order", "workflow", "critical"]
+    },
+    {
+      "name": "Create Direct Trading Slip",
+      "path": "../e2e/testCase/tradingSlip/TS-04-CreateDirectTradingSlip.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 7,
+      "tags": ["order", "workflow", "critical"]
+    },
+    {
+      "name": "Create Unsold Order",
+      "path": "../e2e/testCase/tradingSlip/TS-05-CreateUnsoldOrder.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 8,
+      "tags": ["order", "workflow", "critical"]
+    },
+    {
+      "name": "Create Sales from Unsold Order",
+      "path": "../e2e/testCase/tradingSlip/TS-06-CreateSalesFromUnsold.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 9,
+      "tags": ["order", "workflow", "critical"]
+    },
+    {
+      "name": "Create Presold Order",
+      "path": "../e2e/testCase/tradingSlip/TS-07-CreatePresoldOrder.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 10,
+      "tags": ["order", "workflow", "critical"]
+    },
+    {
+      "name": "Create Bulk Shipment",
+      "path": "../e2e/testCase/tradingSlip/TS-08-CreateBulkShipment.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 11,
+      "tags": ["order", "workflow", "critical"]
+    },
+    {
+      "name": "Create Local Trade",
+      "path": "../e2e/testCase/tradingSlip/TS-09-CreateLocalTrade.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 12,
+      "tags": ["order", "workflow", "critical"]
+    },
+    {
+      "name": "Download Sales Division Report",
+      "path": "../e2e/testCase/report/RE-01-SalesDivisionReport.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 13,
+      "tags": ["report", "download", "medium"]
+    },
+    {
+      "name": "Master data for Business Partner",
+      "path": "../e2e/testCase/master/MD-01-BusinessPartnerForBuyer.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 14,
+      "tags": ["master", "data", "medium"]
+    },
+    {
+      "name": "Download Accrual Listing For Brokerage Report",
+      "path": "../e2e/testCase/report/account/RE-01-RptAccrualListingForBrokerage.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 15,
+      "tags": ["report", "account", "download", "medium"]
+    },
+    {
+      "name": "Sales Details Report",
+      "path": "../e2e/testCase/report/account/RE-02-RptSalesDetails.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 16,
+      "tags": ["report", "account", "download", "medium"]
+    },
+    {
+      "name": "Freight Booking Cancel/Revised/On Hold Report",
+      "path": "../e2e/testCase/report/freight/RE-03-FreightBookingCancellation.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 17,
+      "tags": ["report", "freight", "download", "medium"]
+    },
+    {
+      "name": "Freight Budget Verification Remarks Report",
+      "path": "../e2e/testCase/report/freight/RE-04-RptFreightBudgetVerificationRemarks.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 18,
+      "tags": ["report", "freight", "download", "medium"]
+    },
+    {
+      "name": "Freight Charge Listing Report",
+      "path": "../e2e/testCase/report/freight/RE-05-RptFreightChargeListing.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 19,
+      "tags": ["report", "freight", "download", "medium"]
+    },
+    {
+      "name": "Freight Invoice Listing Payment Report",
+      "path": "../e2e/testCase/report/freight/RE-06-RptFreightInvoiceListingPayment.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 20,
+      "tags": ["report", "freight", "download", "medium"]
+    },
+    {
+      "name": "Freight Invoice Listing Accrual Report",
+      "path": "../e2e/testCase/report/freight/RE-07-RptFreightInvoiceListingAccrual.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 21,
+      "tags": ["report", "freight", "download", "medium"]
+    },
+    {
+      "name": "Outstanding Freight Bill Payment Listing Report",
+      "path": "../e2e/testCase/report/freight/RE-08-RptOutstandingFreightBillPaymentListing.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 22,
+      "tags": ["report", "freight", "download", "medium"]
+    },
+    {
+      "name": "Paid Shipping Line Invoices Report",
+      "path": "../e2e/testCase/report/freight/RE-09-RptPaidShippingLineInvoices.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 23,
+      "tags": ["report", "freight", "download", "medium"]
+    },
+    {
+      "name": "Shipping Line Forwarder Registered List Report",
+      "path": "../e2e/testCase/report/freight/RE-10-RptShippingLineForwarderRegisteredList.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 24,
+      "tags": ["report", "freight", "download", "medium"]
+    },
+    {
+      "name": "Sub CI Dispatched Listing Report",
+      "path": "../e2e/testCase/report/freight/RE-11-RptSubCIDispatchedListing.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 25,
+      "tags": ["report", "freight", "download", "medium"]
+    },
+    {
+      "name": "Total Shipment Report",
+      "path": "../e2e/testCase/report/freight/RE-12-RptTotalShipment.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 26,
+      "tags": ["report", "freight", "download", "medium"]
+    },
+    {
+      "name": "Total Shipment E And F Report",
+      "path": "../e2e/testCase/report/freight/RE-13-RptTotalShipmentEAndF.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 27,
+      "tags": ["report", "freight", "download", "medium"]
+    },
+    {
+      "name": "Buyer With Limits Report",
+      "path": "../e2e/testCase/report/operations/RE-14-RptBuyerWithLimits.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 28,
+      "tags": ["report", "operations", "download", "medium"]
+    },
+    {
+      "name": "Daily Monitoring Shipment Limit Report",
+      "path": "../e2e/testCase/report/operations/RE-15-RptDailyMonitoringShipmentLimit.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 29,
+      "tags": ["report", "operations", "download", "medium"]
+    },
+    {
+      "name": "Icof SG AR AP Matching Report",
+      "path": "../e2e/testCase/report/operations/RE-16-RptIcofSGARAPMatching.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 30,
+      "tags": ["report", "operations", "download", "medium"]
+    },
+    {
+      "name": "Inventory Activity Detail Report",
+      "path": "../e2e/testCase/report/operations/RE-17-RptInventoryActivityDetail.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 31,
+      "tags": ["report", "operations", "download", "medium"]
+    },
+    {
+      "name": "Invoice Listing Report",
+      "path": "../e2e/testCase/report/operations/RE-18-RptInvoiceListing.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 32,
+      "tags": ["report", "operations", "download", "medium"]
+    },
+    {
+      "name": "KPI Late Presentation Of Export Document Report",
+      "path": "../e2e/testCase/report/operations/RE-19-RptKpiLatePresentationOfExportDocument.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 33,
+      "tags": ["report", "operations", "download", "medium"]
+    },
+    {
+      "name": "Late Delivery Outstanding Shipment Contract Report",
+      "path": "../e2e/testCase/report/operations/RE-20-RptLateDeliveryOutstandingShipmentContract.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 34,
+      "tags": ["report", "operations", "download", "medium"]
+    },
+    {
+      "name": "LC Report By Country",
+      "path": "../e2e/testCase/report/operations/RE-21-RptLCReportByCountry.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 35,
+      "tags": ["report", "operations", "download", "medium"]
+    },
+    {
+      "name": "Monthly Sales Turnover Insurance By Division Report",
+      "path": "../e2e/testCase/report/operations/RE-22-RptMonthlySalesTurnoverInsuranceByDivision.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 36,
+      "tags": ["report", "operations", "download", "medium"]
+    },
+    {
+      "name": "Monthly Sales Turnover Insurance By Division DTC Report",
+      "path": "../e2e/testCase/report/operations/RE-23-RptMonthlySalesTurnoverInsuranceByDivisionDTC.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 37,
+      "tags": ["report", "operations", "download", "medium"]
+    },
+    {
+      "name": "Outstanding Contracts Listing Report",
+      "path": "../e2e/testCase/report/operations/RE-24-RptOutstandingContractsListing.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 41,
+      "tags": ["report", "operations", "download", "medium"]
+    },
+    {
+      "name": "Outstanding Purchase Report",
+      "path": "../e2e/testCase/report/operations/RE-25-RptOutstandingPurchaseReport.spec.ts",
+      "enabled": false,
+      "dependencies": [],
+      "priority": 42,
+      "tags": ["report", "operations", "download", "medium"]
+    }
+
+
+
+  ]
+}

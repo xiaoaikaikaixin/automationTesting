@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Slip System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #f5f5f5;
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Navigation Menu Styles */
+        .nav-menu {
+            display: flex;
+            border-bottom: 1px solid #e0e0e0;
+            background-color: #f9f9f9;
+        }
+
+        .nav-section {
+            padding: 10px;
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .nav-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .nav-items {
+            list-style: none;
+        }
+
+        .nav-item {
+            padding: 3px 0;
+            font-size: 14px;
+            color: #555;
+            cursor: pointer;
+        }
+
+        .nav-item:hover {
+            color: #0066cc;
+        }
+
+        /* Search Panel Styles */
+        .search-panel {
+            padding: 15px;
+            background-color: #f0f7ff;
+            border-bottom: 1px solid #d0e0f0;
+        }
+
+        .search-row {
+            display: flex;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .search-label {
+            width: 120px;
+            font-size: 14px;
+            color: #555;
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+
+        .date-input {
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 14px;
+            width: 150px;
+        }
+
+        .search-button {
+            padding: 6px 15px;
+            background: #0066cc;
+            border: none;
+            border-radius: 3px;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .search-button:hover {
+            background: #0055aa;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .dropdown select {
+            width: 100%;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 14px;
+            appearance: none;
+            background: url('data:image/svg+xml;utf8,<svg fill="%23555" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat;
+            background-position: right 5px top 50%;
+            background-color: white;
+        }
+
+        /* Export Button */
+        .export-button {
+            padding: 6px 15px;
+            background: #4CAF50;
+            border: none;
+            border-radius: 3px;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            float: right;
+            margin: 10px;
+        }
+
+        .export-button:hover {
+            background: #45a049;
+        }
+
+        /* Pagination Styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .pagination-button {
+            padding: 5px 10px;
+            margin: 0 5px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .pagination-button:hover {
+            background: #f0f0f0;
+        }
+
+        .pagination-input {
+            width: 50px;
+            padding: 5px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            margin: 0 5px;
+        }
+
+        .pagination-text {
+            margin: 0 5px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        /* Table Styles */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table th {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+            color: #333;
+            border: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+        }
+
+        .data-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .data-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .data-table tr:hover {
+            background-color: #f0f7ff;
+        }
+
+        .view-link {
+            color: #0066cc;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .view-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Menu -->
+        <div class="nav-menu">
+            <div class="nav-section">
+                <div class="nav-title">Sales Transaction</div>
+                <ul class="nav-items">
+                    <li class="nav-item">New Trading Slip</li>
+                    <li class="nav-item">Trading Slip</li>
+                    <li class="nav-item">Sales Contract</li>
+                    <li class="nav-item">Sales Contract (Batch Printing)</li>
+                    <li class="nav-item">Sales Contract Direct Shipment</li>
+                    <li class="nav-item">Contract Instruction</li>
+                    <li class="nav-item">Contract Instruction Direct Shipment</li>
+                    <li class="nav-item">Sub Contract Instruction</li>
+                </ul>
+            </div>
+            <div class="nav-section">
+                <div class="nav-title">Master Trade Contract</div>
+                <ul class="nav-items">
+                    <li class="nav-item">New Master Contract Trading Slip</li>
+                    <li class="nav-item">Master Contract Trading Slip</li>
+                    <li class="nav-item">Master Contract Sales Contract</li>
+                    <li class="nav-item">Master Contract Purchase Order</li>
+                </ul>
+            </div>
+            <div class="nav-section">
+                <div class="nav-title">Purchase Transaction</div>
+                <ul class="nav-items">
+                    <li class="nav-item">Purchase Order</li>
+                    <li class="nav-item">Purchase Order (Batch Printing)</li>
+                    <li class="nav-item">Freight Cost Bulk Update</li>
+                </ul>
+            </div>
+            <div class="nav-section">
+                <div class="nav-title">DTC Transaction</div>
+                <ul class="nav-items">
+                    <li class="nav-item">Direct Trade Commission</li>
+                    <li class="nav-item">Direct Trade Commission (View)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Export Button -->
+        <button class="export-button">Export - Excel</button>
+
+        <!-- Search Panel -->
+        <div class="search-panel">
+            <div class="search-row">
+                <div class="search-label">Traded Date</div>
+                <input type="date" class="date-input">
+                <span style="margin: 0 10px;">-</span>
+                <input type="date" class="date-input">
+            </div>
+            <div class="search-row">
+                <div class="search-label">Seller</div>
+                <div class="dropdown" style="flex: 1;">
+                    <select>
+                        <option value="">Select Seller</option>
+                    </select>
+                </div>
+            </div>
+            <div class="search-row">
+                <div class="search-label">Special Order Type</div>
+                <div class="dropdown" style="flex: 1;">
+                    <select>
+                        <option value="">Select Order Type</option>
+                    </select>
+                </div>
+            </div>
+            <div class="search-row">
+                <div class="search-label"></div>
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button class="pagination-button">⟪</button>
+            <button class="pagination-button">⟨</button>
+            <span class="pagination-text">Page</span>
+            <input type="text" class="pagination-input" value="1">
+            <span class="pagination-text">of 1,374</span>
+            <button class="pagination-button">⟩</button>
+            <button class="pagination-button">⟫</button>
+            <span class="pagination-text" style="margin-left: 20px;">Showing records 1 - 10 of 13,737</span>
+        </div>
+
+        <!-- Data Table -->
+        <div style="overflow-x: auto;">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Special Order Type</th>
+                        <th>Division</th>
+                        <th>Traded By</th>
+                        <th>SC No.</th>
+                        <th>Date</th>
+                        <th>Company</th>
+                        <th>Product</th>
+                        <th>Product Form</th>
+                        <th>Packaging Profile Name</th>
+                        <th>Total No Of Units</th>
+                        <th>Quantity</th>
+                        <th>Currency</th>
+                        <th>Price/MT (USD)</th>
+                        <th>Basis</th>
+                        <th>Discharge Port Country</th>
+                        <th>Discharge Port</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a class="view-link">Normal</a></td>
+                        <td>CSP</td>
+                        <td>Ellen Natalia Nuryanto</td>
+                        <td>SC/16/CSP/0129</td>
+                        <td>25-May-2016</td>
+                        <td>Luxury & Popular Trading Co.</td>
+                        <td>HARMONY Fruity Soap</td>
+                        <td>Solid</td>
+                        <td>75 gm x 72 pieces/carton, individually sachet pack, 6 pieces of different colours / sealable plastic pack, 12 sealable plastic packs/carton</td>
+                        <td>16.000</td>
+                        <td>114.480</td>
+                        <td>USD</td>
+                        <td>1,444.44</td>
+                        <td>FOB</td>
+                        <td>Ethiopia</td>
+                        <td>Djibouti</td>
+                    </tr>
+                    <tr>
+                        <td><a class="view-link">Normal</a></td>
+                        <td>CSP</td>
+                        <td>Ellen Natalia Nuryanto</td>
+                        <td>SC/16/CSP/0129</td>
+                        <td>25-May-2016</td>
+                        <td>Luxury & Popular Trading Co.</td>
+                        <td>ANITA Beauty Soap</td>
+                        <td>Solid</td>
+                        <td>80 gm x 72 pieces / carton, individually Paper Wrap, 6 pieces of mix colors / shrink wrap</td>
+                        <td>16.000</td>
+                        <td>74.880</td>
+                        <td>USD</td>
+                        <td>1,458.33</td>
+                        <td>FOB</td>
+                        <td>Ethiopia</td>
+                        <td>Djibouti</td>
+                    </tr>
+                    <tr>
+                        <td><a class="view-link">Normal</a></td>
+                        <td>CSP</td>
+                        <td>Ellen Natalia Nuryanto</td>
+                        <td>SC/16/CSP/0129</td>
+                        <td>25-May-2016</td>
+                        <td>Luxury & Popular Trading Co.</td>
+                        <td>Medicare Soap</td>
+                        <td>Solid</td>
+                        <td>85 gm x 72 pieces / carton, individually paper wrap, 6 pieces of mixed colours / shrink wrap</td>
+                        <td>16.000</td>
+                        <td>79.682</td>
+                        <td>USD</td>
+                        <td>1,576.80</td>
+                        <td>FOB</td>
+                        <td>Ethiopia</td>
+                        <td>Djibouti</td>
+                    </tr>
+                    <tr>
+                        <td><a class="view-link">Normal</a></td>
+                        <td>CSP</td>
+                        <td>Ellen Natalia Nuryanto</td>
+                        <td>SC/16/CSP/0226</td>
+                        <td>27-Oct-2016</td>
+                        <td>Luxury & Popular Trading Co.</td>
+                        <td>HARMONY Fruity Soap</td>
+                        <td>Solid</td>
+                        <td>75 gm x 72 pieces/carton, individually sachet pack, 6 pieces of different colours / sealable plastic pack, 12 sealable plastic packs/carton</td>
+                        <td>8.000</td>
+                        <td>85.860</td>
+                        <td>USD</td>
+                        <td>1,444.44</td>
+                        <td>FOB</td>
+                        <td>Ethiopia</td>
+                        <td>Djibouti</td>
+                    </tr>
+                    <tr>
+                        <td><a class="view-link">Normal</a></td>
+                        <td>CSP</td>
+                        <td>Ellen Natalia Nuryanto</td>
+                        <td>SC/16/CSP/0226</td>
+                        <td>27-Oct-2016</td>
+                        <td>Luxury & Popular Trading Co.</td>
+                        <td>HARMONY White Yogurt Soap</td>
+                        <td>Solid</td>
+                        <td>Individually paper wrap, 80gm / piece, 6 pieces / flow pack (colorful / attractive), 12 shrink wraps (72 pieces) / carton</td>
+                        <td>8.000</td>
+                        <td>34.042</td>
+                        <td>USD</td>
+                        <td>1,510.42</td>
+                        <td>FOB</td>
+                        <td>Ethiopia</td>
+                        <td>Djibouti</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

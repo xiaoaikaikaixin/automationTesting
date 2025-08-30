@@ -1,0 +1,25 @@
+{
+  "name": "test-dashboard",
+  "version": "1.0.0",
+  "description": "Real-time test automation dashboard",
+  "main": "serve-dashboard.js",
+  "scripts": {
+    "start": "node serve-dashboard.js",
+    "dashboard": "node serve-dashboard.js",
+    "dev": "nodemon serve-dashboard.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "testing",
+    "dashboard",
+    "automation",
+    "reporting"
+  ],
+  "author": "Test Team",
+  "license": "MIT"
+}

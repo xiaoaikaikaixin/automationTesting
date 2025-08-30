@@ -1,0 +1,66 @@
+target:
+  url: "http://192.168.72.44/NCTS-SIT/Login.aspx"
+  viewport:
+  deviceScaleFactor: 1.5
+  userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+tasks:
+  - name: login to NCTS system
+    continueOnError: false
+    retries: 3
+    flow:
+      - aiAction: type ICOF-441 in User ID field
+      - aiAction: type icoficof in Password field
+      - aiAction: click Login button
+      - sleep: 5000
+      - aiAssert: verify that right top of the page user name is displayed
+
+  - name: create new Freight Charge
+    continueOnError: false
+    retries: 3
+    flow:
+      - aiAction: click 'Freight' menu
+      - aiAction: click 'New' link under Freight Charge menu
+      - sleep: 3000
+      - aiAssert: verify that 'Freight Charge - New Record' is displayed
+      - aiAction: click 'Shipping Term' dropdown menu
+      - aiAction: type 'Door to Door' in 'Shipping Term' dropdown menu and click it
+      - aiAction: click 'Place of Loading' dropdown menu
+      - aiAction: click option 'PT Musim Mas KIM II Warehouse' in 'Place of Loading' dropdown menu
+      - aiAction: type United States of America in Country of Destination field
+      - aiAction: press Tab key after entering Country of Destination
+      - aiAction: wait for 3 seconds
+      - aiAction: click 'Port of Discharge' dropdown menu
+      - aiAction: type 'Chicago' in 'Port of Discharge' dropdown menu and click it
+      - aiAction: click 'Freight Indication' dropdown menu
+      - aiAction: click option 'Actual Freight Rate' in 'Freight Indication' dropdown menu
+      - aiAction: click Shipping Line popup icon
+      - aiAction: type 'American President Lines' in Name field and press Enter key
+      - aiAssert: verify 'American President Lines' appears in results
+      - aiAction: click 'Select' button of the first column of the first row
+      - aiAction: wait for 3 seconds
+      - aiAction: type China in 'Final Destination Country' field
+      - aiAction: press Tab key after entering 'Final Destination Country'
+      - aiAction: click 'Final Destination' dropdown menu
+      - aiAction: click option 'Sinochem Orient Shanghai Petrochemical Terminal, Shanghai' in 'Final Destination' dropdown menu
+      - aiAction: type 100 in Transit Time field
+      - aiAction: click 'Cargo Nature' dropdown menu
+      - aiAction: click option 'N/A' in 'Cargo Nature' dropdown menu
+      - aiAction: click Carrier button
+      - aiAction: click first option from dropdown
+      - aiAction: type General Information testing in General Information field
+      - aiAction: type 500 in Freight Rate field
+
+  - name: submit and release Freight Charge
+    continueOnError: false
+    retries: 3
+    flow:
+      - aiAction: click 'Save & Submit for Release' button
+      - aiAction: click OK in prompt window
+      - sleep: 3000
+      - aiAssert: verify Freight Charge No appears under 'Freight Charge No' field
+      - aiAssert: verify Status shows 'Pending Release'
+      - aiAction: click Release button
+      - aiAction: click OK in prompt window
+      - sleep: 3000
+      - aiAssert: verify Status shows 'Released'

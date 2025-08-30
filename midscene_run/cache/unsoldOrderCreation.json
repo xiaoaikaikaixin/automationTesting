@@ -1,0 +1,1902 @@
+{
+  "pkgName": "midscene-unknown-package-name",
+  "pkgVersion": "0.0.0",
+  "cacheId": "unsoldOrderCreation",
+  "aiTasks": [
+    {
+      "prompt": "type ICOF-441 in User ID field",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Login.aspx?",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "type ICOF-441 in User ID field @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Input",
+                "thought": "Type 'ICOF-441' into the User ID field.",
+                "param": {
+                  "value": "ICOF-441"
+                },
+                "locate": {
+                  "id": "legfm",
+                  "prompt": "User ID input field"
+                }
+              }
+            ],
+            "log": "Type 'ICOF-441' into the User ID field.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Input\",\n      \"thought\": \"Type 'ICOF-441' into the User ID field.\",\n      \"param\": {\n        \"value\": \"ICOF-441\"\n      },\n      \"locate\": {\n        \"id\": \"legfm\",\n        \"prompt\": \"User ID input field\"\n      }\n    }\n  ],\n  \"log\": \"Type 'ICOF-441' into the User ID field.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 145,
+              "prompt_tokens": 3094,
+              "total_tokens": 3383
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Login.aspx?",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "User ID input field",
+          "response": {
+            "elements": [
+              {
+                "id": "legfm"
+              }
+            ]
+          },
+          "element": {
+            "id": "legfm",
+            "indexId": 8,
+            "center": [
+              1000,
+              299
+            ],
+            "rect": {
+              "left": 915,
+              "top": 289,
+              "width": 170,
+              "height": 20,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "type icoficof in Password field",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Login.aspx?",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "type icoficof in Password field @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Input",
+                "thought": "Type 'icoficof' into the Password field.",
+                "param": {
+                  "value": "icoficof"
+                },
+                "locate": {
+                  "id": "mekho",
+                  "prompt": "Password input field"
+                }
+              }
+            ],
+            "log": "Type 'icoficof' into the Password field.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Input\",\n      \"thought\": \"Type 'icoficof' into the Password field.\",\n      \"param\": {\n        \"value\": \"icoficof\"\n      },\n      \"locate\": {\n        \"id\": \"mekho\",\n        \"prompt\": \"Password input field\"\n      }\n    }\n  ],\n  \"log\": \"Type 'icoficof' into the Password field.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 136,
+              "prompt_tokens": 3100,
+              "total_tokens": 3346
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Login.aspx?",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "Password input field",
+          "response": {
+            "elements": [
+              {
+                "id": "mekho"
+              }
+            ]
+          },
+          "element": {
+            "id": "mekho",
+            "indexId": 10,
+            "center": [
+              1000,
+              326
+            ],
+            "rect": {
+              "left": 915,
+              "top": 316,
+              "width": 170,
+              "height": 20,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "click Login button",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Login.aspx?",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "click Login button @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Tap",
+                "thought": "Click the Login button.",
+                "param": null,
+                "locate": {
+                  "id": "icolk",
+                  "prompt": "Login button"
+                }
+              }
+            ],
+            "log": "Click the Login button.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Tap\",\n      \"thought\": \"Click the Login button.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"icolk\",\n        \"prompt\": \"Login button\"\n      }\n    }\n  ],\n  \"log\": \"Click the Login button.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 108,
+              "prompt_tokens": 3102,
+              "prompt_tokens_details": {
+                "cached_tokens": 675
+              },
+              "total_tokens": 3359
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Login.aspx?",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "Login button",
+          "response": {
+            "elements": [
+              {
+                "id": "icolk"
+              }
+            ]
+          },
+          "element": {
+            "id": "icolk",
+            "indexId": 11,
+            "center": [
+              939,
+              380
+            ],
+            "rect": {
+              "left": 793,
+              "top": 355,
+              "width": 292,
+              "height": 50,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "move mouse on 'Contract' menu",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Default.aspx",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "move mouse on 'Contract' menu @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Hover",
+                "thought": "Move the mouse over the 'Contract' menu.",
+                "param": null,
+                "locate": {
+                  "id": "ajjao",
+                  "prompt": "Contract"
+                }
+              }
+            ],
+            "log": "Move the mouse over the 'Contract' menu.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Hover\",\n      \"thought\": \"Move the mouse over the 'Contract' menu.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"ajjao\",\n        \"prompt\": \"Contract\"\n      }\n    }\n  ],\n  \"log\": \"Move the mouse over the 'Contract' menu.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 118,
+              "prompt_tokens": 3352,
+              "total_tokens": 3604
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Default.aspx",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "Contract",
+          "response": {
+            "elements": [
+              {
+                "id": "ajjao"
+              }
+            ]
+          },
+          "element": {
+            "id": "ajjao",
+            "indexId": 5,
+            "center": [
+              52,
+              38
+            ],
+            "rect": {
+              "left": 27,
+              "top": 31,
+              "width": 51,
+              "height": 15,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "click 'Create new Trading slip' option",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Default.aspx",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "click 'Create new Trading slip' option @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Tap",
+                "thought": "Click the 'New Trading Slip' option.",
+                "param": null,
+                "locate": {
+                  "id": "oonkd",
+                  "prompt": "New Trading Slip"
+                }
+              }
+            ],
+            "log": "Click the 'New Trading Slip' option.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Tap\",\n      \"thought\": \"Click the 'New Trading Slip' option.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"oonkd\",\n        \"prompt\": \"New Trading Slip\"\n      }\n    }\n  ],\n  \"log\": \"Click the 'New Trading Slip' option.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 117,
+              "prompt_tokens": 4389,
+              "prompt_tokens_details": {
+                "cached_tokens": 750
+              },
+              "total_tokens": 4754
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Default.aspx",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "New Trading Slip",
+          "response": {
+            "elements": [
+              {
+                "id": "oonkd"
+              }
+            ]
+          },
+          "element": {
+            "id": "oonkd",
+            "indexId": 7,
+            "center": [
+              71,
+              81
+            ],
+            "rect": {
+              "left": 21,
+              "top": 74,
+              "width": 101,
+              "height": 15,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "click 'Unsold Order' checkbox from Special Order Type",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "click 'Unsold Order' checkbox from Special Order Type @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Tap",
+                "thought": "Click the 'Unsold Order' radio button.",
+                "param": null,
+                "locate": {
+                  "id": "jeike",
+                  "prompt": "Unsold Order label"
+                }
+              }
+            ],
+            "log": "Click the 'Unsold Order' radio button.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Tap\",\n      \"thought\": \"Click the 'Unsold Order' radio button.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"jeike\",\n        \"prompt\": \"Unsold Order label\"\n      }\n    }\n  ],\n  \"log\": \"Click the 'Unsold Order' radio button.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 120,
+              "prompt_tokens": 7288,
+              "prompt_tokens_details": {
+                "cached_tokens": 838
+              },
+              "total_tokens": 7604
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "Unsold Order label",
+          "response": {
+            "elements": [
+              {
+                "id": "jeike"
+              }
+            ]
+          },
+          "element": {
+            "id": "jeike",
+            "indexId": 32,
+            "center": [
+              81,
+              282
+            ],
+            "rect": {
+              "left": 42,
+              "top": 275,
+              "width": 79,
+              "height": 15,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "click 'Division' drop down list and select 'Fatty Alcohol'",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "click 'Division' drop down list and select 'Fatty Alcohol' @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Tap",
+                "thought": "Click the 'Division' dropdown list to open the options.",
+                "param": null,
+                "locate": {
+                  "id": "ncjaf",
+                  "prompt": "Division dropdown list"
+                }
+              }
+            ],
+            "log": "Click the 'Division' drop down list to open the options.",
+            "error": null,
+            "more_actions_needed_by_instruction": true,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Tap\",\n      \"thought\": \"Click the 'Division' dropdown list to open the options.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"ncjaf\",\n        \"prompt\": \"Division dropdown list\"\n      }\n    }\n  ],\n  \"log\": \"Click the 'Division' drop down list to open the options.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": true\n}",
+            "usage": {
+              "completion_tokens": 125,
+              "prompt_tokens": 7288,
+              "prompt_tokens_details": {
+                "cached_tokens": 838
+              },
+              "total_tokens": 7689
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "Division dropdown list",
+          "response": {
+            "elements": [
+              {
+                "id": "ncjaf"
+              }
+            ]
+          },
+          "element": {
+            "id": "ncjaf",
+            "indexId": 38,
+            "center": [
+              216,
+              368
+            ],
+            "rect": {
+              "left": 21,
+              "top": 356,
+              "width": 390,
+              "height": 24,
+              "zoom": 1
+            }
+          }
+        },
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "click 'Division' drop down list and select 'Fatty Alcohol' @ - Click the 'Division' drop down list to open the options.",
+          "response": {
+            "actions": [
+              {
+                "type": "Tap",
+                "thought": "Select 'Fatty Alcohol' from the opened dropdown list.",
+                "param": null,
+                "locate": {
+                  "id": "nlgle",
+                  "prompt": "Fatty Alcohol"
+                }
+              }
+            ],
+            "log": "Select 'Fatty Alcohol' from the opened dropdown list.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Tap\",\n      \"thought\": \"Select 'Fatty Alcohol' from the opened dropdown list.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"nlgle\",\n        \"prompt\": \"Fatty Alcohol\"\n      }\n    }\n  ],\n  \"log\": \"Select 'Fatty Alcohol' from the opened dropdown list.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 123,
+              "prompt_tokens": 7123,
+              "total_tokens": 7372
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "Fatty Alcohol",
+          "response": {
+            "elements": [
+              {
+                "id": "nlgle"
+              }
+            ]
+          },
+          "element": {
+            "id": "nlgle",
+            "indexId": 75,
+            "center": [
+              66,
+              577
+            ],
+            "rect": {
+              "left": 28,
+              "top": 570,
+              "width": 77,
+              "height": 15,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "type the 202300000001 in Sales Equal Number",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "type the 202300000001 in Sales Equal Number @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Tap",
+                "thought": "Tap the Sales Enquiry Number field to activate the input or selection mechanism.",
+                "param": null,
+                "locate": {
+                  "id": "efhki",
+                  "prompt": "Sales Enquiry Number field"
+                }
+              }
+            ],
+            "log": "Tap the Sales Enquiry Number field to activate it.",
+            "error": null,
+            "more_actions_needed_by_instruction": true,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Tap\",\n      \"thought\": \"Tap the Sales Enquiry Number field to activate the input or selection mechanism.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"efhki\",\n        \"prompt\": \"Sales Enquiry Number field\"\n      }\n    }\n  ],\n  \"log\": \"Tap the Sales Enquiry Number field to activate it.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": true\n}",
+            "usage": {
+              "completion_tokens": 125,
+              "prompt_tokens": 7495,
+              "prompt_tokens_details": {
+                "cached_tokens": 843
+              },
+              "total_tokens": 8551
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "Sales Enquiry Number field",
+          "response": {
+            "elements": [
+              {
+                "id": "efhki"
+              }
+            ]
+          },
+          "element": {
+            "id": "efhki",
+            "indexId": 41,
+            "center": [
+              186,
+              414
+            ],
+            "rect": {
+              "left": 21,
+              "top": 402,
+              "width": 331,
+              "height": 24,
+              "zoom": 1
+            }
+          }
+        },
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "type the 202300000001 in Sales Equal Number @ - Tap the Sales Enquiry Number field to activate it.",
+          "response": {
+            "actions": [
+              {
+                "type": "Input",
+                "thought": "Type the specified number into the Sales Enquiry Number input field.",
+                "param": {
+                  "value": "202300000001"
+                },
+                "locate": {
+                  "id": "kkhpj",
+                  "prompt": "Sales Enquiry Number input field"
+                }
+              }
+            ],
+            "log": "Type the number 202300000001 into the Sales Enquiry Number field.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Input\",\n      \"thought\": \"Type the specified number into the Sales Enquiry Number input field.\",\n      \"param\": {\n        \"value\": \"202300000001\"\n      },\n      \"locate\": {\n        \"id\": \"kkhpj\",\n        \"prompt\": \"Sales Enquiry Number input field\"\n      }\n    }\n  ],\n  \"log\": \"Type the number 202300000001 into the Sales Enquiry Number field.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 158,
+              "prompt_tokens": 7415,
+              "prompt_tokens_details": {
+                "cached_tokens": 841
+              },
+              "total_tokens": 8027
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "Sales Enquiry Number input field",
+          "response": {
+            "elements": [
+              {
+                "id": "kkhpj"
+              }
+            ]
+          },
+          "element": {
+            "id": "kkhpj",
+            "indexId": 79,
+            "center": [
+              186,
+              443
+            ],
+            "rect": {
+              "left": 26,
+              "top": 430,
+              "width": 321,
+              "height": 26,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "click 'Supplier' drop down list and select 'Musim Mas, PT'",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "click 'Supplier' drop down list and select 'Musim Mas, PT' @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Tap",
+                "thought": "Click the 'Supplier' dropdown list to open the options.",
+                "param": null,
+                "locate": {
+                  "id": "dgdfd",
+                  "prompt": "Supplier dropdown list"
+                }
+              }
+            ],
+            "log": "Click the 'Supplier' drop down list.",
+            "error": null,
+            "more_actions_needed_by_instruction": true,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Tap\",\n      \"thought\": \"Click the 'Supplier' dropdown list to open the options.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"dgdfd\",\n        \"prompt\": \"Supplier dropdown list\"\n      }\n    }\n  ],\n  \"log\": \"Click the 'Supplier' drop down list.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": true\n}",
+            "usage": {
+              "completion_tokens": 121,
+              "prompt_tokens": 7376,
+              "total_tokens": 7697
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "Supplier dropdown list",
+          "response": {
+            "elements": [
+              {
+                "id": "dgdfd"
+              }
+            ]
+          },
+          "element": {
+            "id": "dgdfd",
+            "indexId": 50,
+            "center": [
+              216,
+              543
+            ],
+            "rect": {
+              "left": 21,
+              "top": 531,
+              "width": 390,
+              "height": 24,
+              "zoom": 1
+            }
+          }
+        },
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "click 'Supplier' drop down list and select 'Musim Mas, PT' @ - Click the 'Supplier' drop down list.",
+          "response": {
+            "actions": [
+              {
+                "type": "Tap",
+                "thought": "Select 'Musim Mas, PT' from the opened dropdown list.",
+                "param": null,
+                "locate": {
+                  "id": "cibno",
+                  "prompt": "Musim Mas, PT"
+                }
+              }
+            ],
+            "log": "Select 'Musim Mas, PT' from the dropdown list.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Tap\",\n      \"thought\": \"Select 'Musim Mas, PT' from the opened dropdown list.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"cibno\",\n        \"prompt\": \"Musim Mas, PT\"\n      }\n    }\n  ],\n  \"log\": \"Select 'Musim Mas, PT' from the dropdown list.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 129,
+              "prompt_tokens": 7555,
+              "total_tokens": 7884
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "Musim Mas, PT",
+          "response": {
+            "elements": [
+              {
+                "id": "cibno"
+              }
+            ]
+          },
+          "element": {
+            "id": "cibno",
+            "indexId": 81,
+            "center": [
+              73,
+              662
+            ],
+            "rect": {
+              "left": 28,
+              "top": 655,
+              "width": 90,
+              "height": 15,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "click 'Seller' drop down list and select 'Inter-Continental Oils & Fats Pte. Ltd.'",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "click 'Seller' drop down list and select 'Inter-Continental Oils & Fats Pte. Ltd.' @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Tap",
+                "thought": "Click the 'Seller' dropdown list to open the options.",
+                "param": null,
+                "locate": {
+                  "id": "hfafc",
+                  "prompt": "Seller dropdown list"
+                }
+              }
+            ],
+            "log": "Click the 'Seller' dropdown list to open the options.",
+            "error": null,
+            "more_actions_needed_by_instruction": true,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Tap\",\n      \"thought\": \"Click the 'Seller' dropdown list to open the options.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"hfafc\",\n        \"prompt\": \"Seller dropdown list\"\n      }\n    }\n  ],\n  \"log\": \"Click the 'Seller' dropdown list to open the options.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": true\n}",
+            "usage": {
+              "completion_tokens": 124,
+              "prompt_tokens": 7606,
+              "prompt_tokens_details": {
+                "cached_tokens": 845
+              },
+              "total_tokens": 8043
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "Seller dropdown list",
+          "response": {
+            "elements": [
+              {
+                "id": "hfafc"
+              }
+            ]
+          },
+          "element": {
+            "id": "hfafc",
+            "indexId": 60,
+            "center": [
+              216,
+              635
+            ],
+            "rect": {
+              "left": 21,
+              "top": 623,
+              "width": 390,
+              "height": 24,
+              "zoom": 1
+            }
+          }
+        },
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "click 'Seller' drop down list and select 'Inter-Continental Oils & Fats Pte. Ltd.' @ - Click the 'Seller' dropdown list to open the options.",
+          "response": {
+            "actions": [
+              {
+                "type": "Tap",
+                "thought": "Select 'Inter-Continental Oils & Fats Pte. Ltd.' from the opened dropdown list.",
+                "param": null,
+                "locate": {
+                  "id": "lekmd",
+                  "prompt": "Inter-Continental Oils & Fats Pte. Ltd."
+                }
+              }
+            ],
+            "log": "Select 'Inter-Continental Oils & Fats Pte. Ltd.' from the opened dropdown list.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Tap\",\n      \"thought\": \"Select 'Inter-Continental Oils & Fats Pte. Ltd.' from the opened dropdown list.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"lekmd\",\n        \"prompt\": \"Inter-Continental Oils & Fats Pte. Ltd.\"\n      }\n    }\n  ],\n  \"log\": \"Select 'Inter-Continental Oils & Fats Pte. Ltd.' from the opened dropdown list.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 141,
+              "prompt_tokens": 7571,
+              "prompt_tokens_details": {
+                "cached_tokens": 844
+              },
+              "total_tokens": 7869
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "Inter-Continental Oils & Fats Pte. Ltd.",
+          "response": {
+            "elements": [
+              {
+                "id": "lekmd"
+              }
+            ]
+          },
+          "element": {
+            "id": "lekmd",
+            "indexId": 80,
+            "center": [
+              141,
+              577
+            ],
+            "rect": {
+              "left": 28,
+              "top": 570,
+              "width": 227,
+              "height": 15,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "scorll to the bottom of the page",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "scorll to the bottom of the page @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Scroll",
+                "thought": "Scroll down the page until the bottom is reached.",
+                "param": {
+                  "direction": "down",
+                  "scrollType": "untilBottom"
+                },
+                "locate": null
+              }
+            ],
+            "log": "Scrolling down the page to reach the bottom.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Scroll\",\n      \"thought\": \"Scroll down the page until the bottom is reached.\",\n      \"param\": {\n        \"direction\": \"down\",\n        \"scrollType\": \"untilBottom\"\n      },\n      \"locate\": null\n    }\n  ],\n  \"log\": \"Scrolling down the page to reach the bottom.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 116,
+              "prompt_tokens": 7653,
+              "total_tokens": 7847
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "type the Buyer PO NO is 123 in Buyer PO No. field",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "type the Buyer PO NO is 123 in Buyer PO No. field @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Input",
+                "thought": "Type '123' into the Buyer PO No. field.",
+                "param": {
+                  "value": "123"
+                },
+                "locate": {
+                  "id": "lopak",
+                  "prompt": "Buyer PO No. field"
+                }
+              }
+            ],
+            "log": "Type '123' into the Buyer PO No. field.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Input\",\n      \"thought\": \"Type '123' into the Buyer PO No. field.\",\n      \"param\": {\n        \"value\": \"123\"\n      },\n      \"locate\": {\n        \"id\": \"lopak\",\n        \"prompt\": \"Buyer PO No. field\"\n      }\n    }\n  ],\n  \"log\": \"Type '123' into the Buyer PO No. field.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 141,
+              "prompt_tokens": 7238,
+              "prompt_tokens_details": {
+                "cached_tokens": 837
+              },
+              "total_tokens": 7540
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "Buyer PO No. field",
+          "response": {
+            "elements": [
+              {
+                "id": "lopak"
+              }
+            ]
+          },
+          "element": {
+            "id": "lopak",
+            "indexId": 42,
+            "center": [
+              216,
+              557
+            ],
+            "rect": {
+              "left": 21,
+              "top": 547,
+              "width": 390,
+              "height": 20,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "click 'Currency' drop down list and select 'USD'",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "click 'Currency' drop down list and select 'USD' @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Tap",
+                "thought": "Click the 'Currency' dropdown list to show the options.",
+                "param": null,
+                "locate": {
+                  "id": "jnmda",
+                  "prompt": "Currency dropdown list"
+                }
+              }
+            ],
+            "log": "Click the 'Currency' dropdown list to show the options.",
+            "error": null,
+            "more_actions_needed_by_instruction": true,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Tap\",\n      \"thought\": \"Click the 'Currency' dropdown list to show the options.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"jnmda\",\n        \"prompt\": \"Currency dropdown list\"\n      }\n    }\n  ],\n  \"log\": \"Click the 'Currency' dropdown list to show the options.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": true\n}",
+            "usage": {
+              "completion_tokens": 124,
+              "prompt_tokens": 7239,
+              "total_tokens": 7684
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "Currency dropdown list",
+          "response": {
+            "elements": [
+              {
+                "id": "jnmda"
+              }
+            ]
+          },
+          "element": {
+            "id": "jnmda",
+            "indexId": 44,
+            "center": [
+              216,
+              604
+            ],
+            "rect": {
+              "left": 21,
+              "top": 592,
+              "width": 390,
+              "height": 24,
+              "zoom": 1
+            }
+          }
+        },
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "click 'Currency' drop down list and select 'USD' @ - Click the 'Currency' dropdown list to show the options.",
+          "response": {
+            "actions": [
+              {
+                "type": "Scroll",
+                "thought": "The 'USD' option is not visible in the current list. I need to scroll down to see if it appears.",
+                "param": {
+                  "direction": "down",
+                  "scrollType": "once"
+                },
+                "locate": {
+                  "id": "ffdjl",
+                  "prompt": "The list of currency options"
+                }
+              }
+            ],
+            "log": "Scroll down the list of currency options to find 'USD'.",
+            "error": null,
+            "more_actions_needed_by_instruction": true,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Scroll\",\n      \"thought\": \"The 'USD' option is not visible in the current list. I need to scroll down to see if it appears.\",\n      \"param\": {\n        \"direction\": \"down\",\n        \"scrollType\": \"once\"\n      },\n      \"locate\": {\n        \"id\": \"ffdjl\",\n        \"prompt\": \"The list of currency options\"\n      }\n    }\n  ],\n  \"log\": \"Scroll down the list of currency options to find 'USD'.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": true\n}",
+            "usage": {
+              "completion_tokens": 157,
+              "prompt_tokens": 7382,
+              "prompt_tokens_details": {
+                "cached_tokens": 841
+              },
+              "total_tokens": 7809
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "The list of currency options",
+          "response": {
+            "elements": [
+              {
+                "id": "ffdjl"
+              }
+            ]
+          },
+          "element": {
+            "id": "ffdjl",
+            "indexId": 74,
+            "center": [
+              216,
+              406
+            ],
+            "rect": {
+              "left": 22,
+              "top": 392,
+              "width": 388,
+              "height": 29,
+              "zoom": 1
+            }
+          }
+        },
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "click 'Currency' drop down list and select 'USD' @ - Click the 'Currency' dropdown list to show the options.\n- Scroll down the list of currency options to find 'USD'.",
+          "response": {
+            "actions": [
+              {
+                "type": "Tap",
+                "thought": "Tap on the 'USD' option in the currency list.",
+                "param": null,
+                "locate": {
+                  "id": "enehf",
+                  "prompt": "USD"
+                }
+              }
+            ],
+            "log": "Tap on the 'USD' option in the currency list.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Tap\",\n      \"thought\": \"Tap on the 'USD' option in the currency list.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"enehf\",\n        \"prompt\": \"USD\"\n      }\n    }\n  ],\n  \"log\": \"Tap on the 'USD' option in the currency list.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 121,
+              "prompt_tokens": 7323,
+              "total_tokens": 7558
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "USD",
+          "response": {
+            "elements": [
+              {
+                "id": "enehf"
+              }
+            ]
+          },
+          "element": {
+            "id": "enehf",
+            "indexId": 76,
+            "center": [
+              41,
+              469
+            ],
+            "rect": {
+              "left": 28,
+              "top": 462,
+              "width": 26,
+              "height": 15,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "click 'Basis' drop down list and select 'FCA Loading Port CY'",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "click 'Basis' drop down list and select 'FCA Loading Port CY' @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Tap",
+                "thought": "Click the 'Basis' drop down list to open the options.",
+                "param": null,
+                "locate": {
+                  "id": "leofl",
+                  "prompt": "Basis drop down list"
+                }
+              }
+            ],
+            "log": "Click the 'Basis' drop down list to open the options.",
+            "error": null,
+            "more_actions_needed_by_instruction": true,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Tap\",\n      \"thought\": \"Click the 'Basis' drop down list to open the options.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"leofl\",\n        \"prompt\": \"Basis drop down list\"\n      }\n    }\n  ],\n  \"log\": \"Click the 'Basis' drop down list to open the options.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": true\n}",
+            "usage": {
+              "completion_tokens": 127,
+              "prompt_tokens": 7293,
+              "prompt_tokens_details": {
+                "cached_tokens": 839
+              },
+              "total_tokens": 7635
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "Basis drop down list",
+          "response": {
+            "elements": [
+              {
+                "id": "leofl"
+              }
+            ]
+          },
+          "element": {
+            "id": "leofl",
+            "indexId": 59,
+            "center": [
+              685,
+              274
+            ],
+            "rect": {
+              "left": 490,
+              "top": 262,
+              "width": 390,
+              "height": 24,
+              "zoom": 1
+            }
+          }
+        },
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "click 'Basis' drop down list and select 'FCA Loading Port CY' @ - Click the 'Basis' drop down list to open the options.",
+          "response": {
+            "actions": [
+              {
+                "type": "Scroll",
+                "thought": "Scroll down the list of Basis options to find 'FCA Loading Port CY'.",
+                "param": {
+                  "direction": "down",
+                  "scrollType": "once"
+                },
+                "locate": {
+                  "id": "plemb",
+                  "prompt": "The list of Basis options"
+                }
+              }
+            ],
+            "log": "Scroll down the list of Basis options to find 'FCA Loading Port CY'.",
+            "error": null,
+            "more_actions_needed_by_instruction": true,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Scroll\",\n      \"thought\": \"Scroll down the list of Basis options to find 'FCA Loading Port CY'.\",\n      \"param\": {\n        \"direction\": \"down\",\n        \"scrollType\": \"once\"\n      },\n      \"locate\": {\n        \"id\": \"plemb\",\n        \"prompt\": \"The list of Basis options\"\n      }\n    }\n  ],\n  \"log\": \"Scroll down the list of Basis options to find 'FCA Loading Port CY'.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": true\n}",
+            "usage": {
+              "completion_tokens": 154,
+              "prompt_tokens": 7116,
+              "total_tokens": 7683
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "The list of Basis options",
+          "response": {
+            "elements": [
+              {
+                "id": "plemb"
+              }
+            ]
+          },
+          "element": {
+            "id": "plemb",
+            "indexId": 70,
+            "center": [
+              685,
+              334
+            ],
+            "rect": {
+              "left": 491,
+              "top": 320,
+              "width": 388,
+              "height": 29,
+              "zoom": 1
+            }
+          }
+        },
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "click 'Basis' drop down list and select 'FCA Loading Port CY' @ - Click the 'Basis' drop down list to open the options.\n- Scroll down the list of Basis options to find 'FCA Loading Port CY'.",
+          "response": {
+            "actions": [
+              {
+                "type": "Tap",
+                "thought": "Tap on 'FCA Loading Port CY' to select it from the list.",
+                "param": null,
+                "locate": {
+                  "id": "ampjb",
+                  "prompt": "FCA Loading Port CY"
+                }
+              }
+            ],
+            "log": "Tap on 'FCA Loading Port CY' to select it from the list.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Tap\",\n      \"thought\": \"Tap on 'FCA Loading Port CY' to select it from the list.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"ampjb\",\n        \"prompt\": \"FCA Loading Port CY\"\n      }\n    }\n  ],\n  \"log\": \"Tap on 'FCA Loading Port CY' to select it from the list.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 133,
+              "prompt_tokens": 7119,
+              "prompt_tokens_details": {
+                "cached_tokens": 835
+              },
+              "total_tokens": 7380
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "FCA Loading Port CY",
+          "response": {
+            "elements": [
+              {
+                "id": "ampjb"
+              }
+            ]
+          },
+          "element": {
+            "id": "ampjb",
+            "indexId": 75,
+            "center": [
+              558,
+              475
+            ],
+            "rect": {
+              "left": 497,
+              "top": 468,
+              "width": 123,
+              "height": 15,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "click 'Traded By' drop down list and select 'Agus Salim'",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "click 'Traded By' drop down list and select 'Agus Salim' @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Tap",
+                "thought": "Click the 'Traded By' dropdown list to open the options.",
+                "param": null,
+                "locate": {
+                  "id": "dhcei",
+                  "prompt": "Traded By dropdown list"
+                }
+              }
+            ],
+            "log": "Click the 'Traded By' dropdown list to open the options.",
+            "error": null,
+            "more_actions_needed_by_instruction": true,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Tap\",\n      \"thought\": \"Click the 'Traded By' dropdown list to open the options.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"dhcei\",\n        \"prompt\": \"Traded By dropdown list\"\n      }\n    }\n  ],\n  \"log\": \"Click the 'Traded By' dropdown list to open the options.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": true\n}",
+            "usage": {
+              "completion_tokens": 129,
+              "prompt_tokens": 7348,
+              "prompt_tokens_details": {
+                "cached_tokens": 840
+              },
+              "total_tokens": 7646
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "Traded By dropdown list",
+          "response": {
+            "elements": [
+              {
+                "id": "dhcei"
+              }
+            ]
+          },
+          "element": {
+            "id": "dhcei",
+            "indexId": 79,
+            "center": [
+              1155,
+              182
+            ],
+            "rect": {
+              "left": 960,
+              "top": 170,
+              "width": 390,
+              "height": 24,
+              "zoom": 1
+            }
+          }
+        },
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "click 'Traded By' drop down list and select 'Agus Salim' @ - Click the 'Traded By' dropdown list to open the options.",
+          "response": {
+            "actions": [
+              {
+                "type": "Tap",
+                "thought": "Select 'Agus Salim' from the dropdown list.",
+                "param": null,
+                "locate": {
+                  "id": "adgfn",
+                  "prompt": "Agus Salim"
+                }
+              }
+            ],
+            "log": "Select 'Agus Salim' from the dropdown list.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Tap\",\n      \"thought\": \"Select 'Agus Salim' from the dropdown list.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"adgfn\",\n        \"prompt\": \"Agus Salim\"\n      }\n    }\n  ],\n  \"log\": \"Select 'Agus Salim' from the dropdown list.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 122,
+              "prompt_tokens": 7774,
+              "prompt_tokens_details": {
+                "cached_tokens": 849
+              },
+              "total_tokens": 8045
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "Agus Salim",
+          "response": {
+            "elements": [
+              {
+                "id": "adgfn"
+              }
+            ]
+          },
+          "element": {
+            "id": "adgfn",
+            "indexId": 82,
+            "center": [
+              1000,
+              271
+            ],
+            "rect": {
+              "left": 967,
+              "top": 264,
+              "width": 67,
+              "height": 15,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "click 'Save' button",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "click 'Save' button @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Tap",
+                "thought": "Click the 'Save' button to save the trading slip.",
+                "param": null,
+                "locate": {
+                  "id": "kdbbe",
+                  "prompt": "Save button"
+                }
+              }
+            ],
+            "log": "Click the 'Save' button.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Tap\",\n      \"thought\": \"Click the 'Save' button to save the trading slip.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"kdbbe\",\n        \"prompt\": \"Save button\"\n      }\n    }\n  ],\n  \"log\": \"Click the 'Save' button.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 118,
+              "prompt_tokens": 7390,
+              "total_tokens": 7584
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "Save button",
+          "response": {
+            "elements": [
+              {
+                "id": "kdbbe"
+              }
+            ]
+          },
+          "element": {
+            "id": "kdbbe",
+            "indexId": 21,
+            "center": [
+              1321,
+              100
+            ],
+            "rect": {
+              "left": 1292,
+              "top": 87,
+              "width": 58,
+              "height": 27,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "print the tradingslipNo",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "print the tradingslipNo @ ",
+          "response": {
+            "actions": [],
+            "log": "The element 'tradingslipNo' is not found on this page. This page is for creating a new trading slip, not viewing an existing one with a number.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [],\n  \"log\": \"The element 'tradingslipNo' is not found on this page. This page is for creating a new trading slip, not viewing an existing one with a number.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 75,
+              "prompt_tokens": 7299,
+              "total_tokens": 7520
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "print the tsApprovalStatus",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "print the tsApprovalStatus @ ",
+          "response": {
+            "actions": [],
+            "log": "The element 'tsApprovalStatus' was not found on the page.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [],\n  \"log\": \"The element 'tsApprovalStatus' was not found on the page.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 54,
+              "prompt_tokens": 7297,
+              "prompt_tokens_details": {
+                "cached_tokens": 6718
+              },
+              "total_tokens": 7457
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "click the 'Shipping' tab",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1440,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "click the 'Shipping' tab @ ",
+          "response": {
+            "actions": [],
+            "log": "The 'Shipping' tab is not visible on the current page.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [],\n  \"log\": \"The 'Shipping' tab is not visible on the current page.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 54,
+              "prompt_tokens": 7299,
+              "prompt_tokens_details": {
+                "cached_tokens": 6718
+              },
+              "total_tokens": 7497
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

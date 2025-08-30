@@ -1,0 +1,173 @@
+{
+  "pkgName": "midscene-unknown-package-name",
+  "pkgVersion": "0.0.0",
+  "cacheId": "e2e-testCase-tradingSlip-test.spec.ts(Create-Normal-order-with-Basis-is-C&D)",
+  "aiTasks": [
+    {
+      "prompt": "scroll to the right to stop at the 'Buyer Goods Description' column",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&ID=60620",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll to the right to stop at the 'Buyer Goods Description' column @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Scroll",
+                "thought": "Scroll the table horizontally to bring the 'Buyer Goods Description' column to the left edge, revealing columns to its right.",
+                "param": {
+                  "direction": "left",
+                  "scrollType": "once"
+                },
+                "locate": {
+                  "id": "kagmm",
+                  "prompt": "Buyer Goods Description"
+                }
+              }
+            ],
+            "log": "Scroll the table horizontally to bring the 'Buyer Goods Description' column to the left edge.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Scroll\",\n      \"thought\": \"Scroll the table horizontally to bring the 'Buyer Goods Description' column to the left edge, revealing columns to its right.\",\n      \"param\": {\n        \"direction\": \"left\",\n        \"scrollType\": \"once\"\n      },\n      \"locate\": {\n        \"id\": \"kagmm\",\n        \"prompt\": \"Buyer Goods Description\"\n      }\n    }\n  ],\n  \"log\": \"Scroll the table horizontally to bring the 'Buyer Goods Description' column to the left edge.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 160,
+              "prompt_tokens": 6637,
+              "total_tokens": 8225
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&ID=60620",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "Buyer Goods Description",
+          "response": {
+            "elements": [
+              {
+                "id": "kagmm"
+              }
+            ]
+          },
+          "element": {
+            "id": "kagmm",
+            "indexId": 55,
+            "center": [
+              1392,
+              281
+            ],
+            "rect": {
+              "left": 1348,
+              "top": 262,
+              "width": 89,
+              "height": 39,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "scroll vertically to ensure the 'Buyer Goods Description' field is visible",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&ID=60620",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll vertically to ensure the 'Buyer Goods Description' field is visible @ ",
+          "response": {
+            "actions": [],
+            "log": "The 'Buyer Goods Description' field is already visible on the page.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [],\n  \"log\": \"The 'Buyer Goods Description' field is already visible on the page.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 55,
+              "prompt_tokens": 9982,
+              "total_tokens": 10211
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "scroll to the right to stop at the 'Amount' column",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipItemEntry.aspx?ID=60620&ChildID=61995&Edit=1&Type=TRADING_SLIP",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll to the right to stop at the 'Amount' column @ ",
+          "response": {
+            "actions": [],
+            "log": "The 'Amount' column is already visible on the page.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [],\n  \"log\": \"The 'Amount' column is already visible on the page.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 53,
+              "prompt_tokens": 10023,
+              "total_tokens": 10221
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "scroll vertically to ensure the 'Amount' field is visible",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipItemEntry.aspx?ID=60620&ChildID=61995&Edit=1&Type=TRADING_SLIP",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll vertically to ensure the 'Amount' field is visible @ ",
+          "response": {
+            "actions": [],
+            "log": "The 'Amount' field is already visible on the page.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [],\n  \"log\": \"The 'Amount' field is already visible on the page.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 53,
+              "prompt_tokens": 10022,
+              "prompt_tokens_details": {
+                "cached_tokens": 9299
+              },
+              "total_tokens": 10160
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

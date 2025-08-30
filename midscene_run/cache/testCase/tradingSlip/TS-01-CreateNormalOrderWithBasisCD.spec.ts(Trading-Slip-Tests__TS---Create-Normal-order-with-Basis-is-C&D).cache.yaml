@@ -1,0 +1,108 @@
+midsceneVersion: 1.7.7
+cacheId: testCase\tradingSlip\TS-01-CreateNormalOrderWithBasisCD.spec.ts(Trading-Slip-Tests__TS---Create-Normal-order-with-Basis-is-C&D)
+caches:
+  - type: locate
+    prompt: the center of the product details table
+    cache:
+      xpaths:
+        - /html/body/form[1]/div[4]/div[5]/div[1]/div[3]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[normalize-space()="SPF Brand"]
+  - type: locate
+    prompt: the center of the product details table
+    cache:
+      xpaths:
+        - /html/body/form[1]/div[4]/div[5]/div[1]/div[3]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[normalize-space()="SPF Brand"]
+  - type: locate
+    prompt: the center of the product details table
+    cache:
+      xpaths:
+        - /html/body/form[1]/div[4]/div[5]/div[1]/div[3]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[normalize-space()="SPF Brand"]
+  - type: locate
+    prompt: the center of the product details table
+    cache:
+      xpaths:
+        - /html/body/form[1]/div[4]/div[5]/div[1]/div[3]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[normalize-space()="SPF Brand"]
+  - type: locate
+    prompt: the center of the product details table
+    cache:
+      xpaths:
+        - /html/body/form[1]/div[4]/div[5]/div[1]/div[3]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[normalize-space()="SPF Brand"]
+  - type: locate
+    prompt: the center of the product details table
+    cache:
+      xpaths:
+        - /html/body/form[1]/div[4]/div[5]/div[1]/div[3]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[normalize-space()="SPF Brand"]
+  - type: locate
+    prompt: the center of the product details table
+    cache:
+      xpaths:
+        - /html/body/form[1]/div[4]/div[5]/div[1]/div[3]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[normalize-space()="SPF Brand"]
+  - type: locate
+    prompt: the center of the product details table
+    cache:
+      xpaths:
+        - /html/body/form[1]/div[4]/div[5]/div[1]/div[3]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[normalize-space()="SPF Brand"]
+  - type: locate
+    prompt: the center of the product details table
+    cache:
+      xpaths:
+        - /html/body/form[1]/div[4]/div[5]/div[1]/div[3]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[normalize-space()="SPF Brand"]
+  - type: locate
+    prompt: the center of the product details table
+    cache:
+      xpaths:
+        - /html/body/form[1]/div[4]/div[5]/div[1]/div[3]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[normalize-space()="SPF Brand"]
+  - type: locate
+    prompt: the center of the product details table
+    cache:
+      xpaths:
+        - /html/body/form[1]/div[4]/div[5]/div[1]/div[3]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[normalize-space()="SPF Brand"]
+  - type: locate
+    prompt: the center of the product details table
+    cache:
+      xpaths:
+        - /html/body/form[1]/div[4]/div[5]/div[1]/div[3]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[normalize-space()="SPF Brand"]
+  - type: locate
+    prompt: the center of the product details table
+    cache:
+      xpaths:
+        - /html/body/form[1]/div[4]/div[5]/div[1]/div[3]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[normalize-space()="SPF Brand"]
+  - type: locate
+    prompt: the center of the product details table
+    cache:
+      xpaths:
+        - /html/body/form[1]/div[4]/div[5]/div[1]/div[3]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[normalize-space()="SPF Brand"]
+  - type: locate
+    prompt: the center of the product details table
+    cache:
+      xpaths:
+        - /html/body/form[1]/div[4]/div[5]/div[1]/div[3]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[normalize-space()="SPF Brand"]
+  - type: locate
+    prompt: the center of the product details table
+    cache:
+      xpaths:
+        - /html/body/form[1]/div[4]/div[5]/div[1]/div[3]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[normalize-space()="SPF Brand"]
+  - type: locate
+    prompt: the center of the product details table
+    cache:
+      xpaths:
+        - /html/body/form[1]/div[4]/div[5]/div[1]/div[3]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[normalize-space()="SPF Brand"]
+  - type: locate
+    prompt: the center of the product details table
+    cache:
+      xpaths:
+        - /html/body/form[1]/div[4]/div[5]/div[1]/div[3]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[normalize-space()="SPF Brand"]
+  - type: locate
+    prompt: the center of the product details table
+    cache:
+      xpaths:
+        - /html/body/form[1]/div[4]/div[5]/div[1]/div[3]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[normalize-space()="SPF Brand"]
+  - type: locate
+    prompt: the center of the product details table
+    cache:
+      xpaths:
+        - /html/body/form[1]/div[4]/div[5]/div[1]/div[3]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[normalize-space()="SPF Brand"]
+  - type: locate
+    prompt: the center of the product details table
+    cache:
+      xpaths:
+        - /html/body/form[1]/div[4]/div[5]/div[1]/div[3]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[normalize-space()="SPF Brand"]

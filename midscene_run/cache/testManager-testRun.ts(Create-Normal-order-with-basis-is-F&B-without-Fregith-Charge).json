@@ -1,0 +1,50 @@
+{
+  "pkgName": "midscene-unknown-package-name",
+  "pkgVersion": "0.0.0",
+  "cacheId": "testManager-testRun.ts(Create-Normal-order-with-basis-is-F&B-without-Fregith-Charge)",
+  "aiTasks": [
+    {
+      "prompt": "scroll to the right to stop at the 'Buyer Goods Description' column",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&ID=61643",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll to the right to stop at the 'Buyer Goods Description' column @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Scroll",
+                "thought": "Scroll the page to the right until the 'Buyer Goods Description' column is visible.",
+                "locate": null,
+                "param": {
+                  "direction": "right",
+                  "scrollType": "untilVisible",
+                  "elementToScrollTo": {
+                    "id": "mdboh",
+                    "prompt": "Buyer Goods Description"
+                  }
+                }
+              }
+            ],
+            "log": "Scrolling to the right to show the 'Buyer Goods Description' column.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Scroll\",\n      \"thought\": \"Scroll the page to the right until the 'Buyer Goods Description' column is visible.\",\n      \"locate\": null,\n      \"param\": {\n        \"direction\": \"right\",\n        \"scrollType\": \"untilVisible\",\n        \"elementToScrollTo\": {\n          \"id\": \"mdboh\",\n          \"prompt\": \"Buyer Goods Description\"\n        }\n      }\n    }\n  ],\n  \"log\": \"Scrolling to the right to show the 'Buyer Goods Description' column.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 160,
+              "prompt_tokens": 6578,
+              "total_tokens": 6910
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

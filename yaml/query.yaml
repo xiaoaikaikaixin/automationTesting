@@ -1,0 +1,8 @@
+agent:
+  name: query-postgres
+  type: query
+  datasource: PostgreSQL
+  query: |
+    select top 10 *
+    from [NCTS-SIT].[dbo].[TradingSlip]
+    order by id desc;

@@ -1,0 +1,52 @@
+target:
+  url: "http://192.168.72.44/NCTS-SIT/Login.aspx?"
+  viewport:
+  deviceScaleFactor: 1.5
+  userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+tasks:
+  - name: login to NCTS system
+    continueOnError: true
+    retries: 3
+    flow:
+      - sleep: 2000
+      - aiAction: type ${nctsUsername} in User ID field
+      - aiAction: type ${nctsPassword} in Password field
+      - aiAction: click Login button
+      - sleep: 5000
+      - aiAssert: verify that right top of the page user name is displayed
+
+
+  - name: create new Trading slip with Unsold order type
+    continueOnError: true
+    retries: 3
+    flow:
+      - aiAction: move mouse on 'Contract' menu
+      - aiAction: click 'Create new Trading slip' option
+      - sleep: 3000
+      - aiAssert: verify that 'Trading Slip - New Record' is displayed
+      - aiAction: click 'Unsold Order' checkbox from Special Order Type
+      - aiAction: click 'Division' drop down list and select '${division}'
+      - aiAction: type the ${saleEqualNumber} in Sales Equal Number
+      - aiAction: click 'Supplier' drop down list and select '${supplier}'
+      - aiAssert: verify that 'Fatory Location' value euqals to '${factoryLocation}'
+      - aiAction: click 'Seller' drop down list and select '${seller}'
+      - aiAction: scorll to the bottom of the page
+      - aiAction: type the ${buyerPONo} in Buyer PO No. field
+      - aiAction: click 'Currency' drop down list and select '${currency}'
+      - aiAction: click 'Basis' drop down list and select '${basis}'
+      - aiAction: click 'Traded By' drop down list and select '${tradedBy}'
+      - aiAction: click 'Save' button
+      - sleep: 5000
+      - aiQuery: >
+          {tradingslipNo: string, tsApprovalStatus: string}[], return text from the 'Trading Slip No.' field and 'Approval Status' field
+      - aiAction: print the tradingslipNo
+      - aiAction: print the tsApprovalStatus
+      - aiAssert: verify that the tsApprovalStatus equals to 'Draft'
+      - aiAssert: verify that the Trading Slip - tradingslipNo is displayed
+      - sleep: 5000
+
+  - name: fill in value for Shipping tab
+    flow:
+      - aiAction: click the 'Shipping' tab
+      - sleep: 5000

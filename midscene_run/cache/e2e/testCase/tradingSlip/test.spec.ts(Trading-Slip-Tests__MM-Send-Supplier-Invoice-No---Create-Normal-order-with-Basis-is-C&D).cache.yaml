@@ -1,0 +1,17 @@
+midsceneVersion: 0.22.1
+cacheId: >-
+  e2e\testCase\tradingSlip\test.spec.ts(Trading-Slip-Tests__MM-Send-Supplier-Invoice-No---Create-Normal-order-with-Basis-is-C&D)
+caches:
+  - type: locate
+    prompt: The 'Invoice Status' dropdown list
+    xpaths:
+      - >-
+        /html/body/form[1]/div[4]/div[4]/div[1]/table[2]/tbody[1]/tr[1]/td[1]/table[1]/tbody[1]/tr[8]/td[1]/span[2]/span[1]/span[1]/span[1]
+  - type: plan
+    prompt: Select the 'Final' option from the 'Invoice Status' drop down list
+    yamlWorkflow: |
+      tasks:
+        - name: Select the 'Final' option from the 'Invoice Status' drop down list
+          flow:
+            - aiTap: The 'Invoice Status' dropdown list
+            - aiTap: The 'Final' option in the 'Invoice Status' dropdown list

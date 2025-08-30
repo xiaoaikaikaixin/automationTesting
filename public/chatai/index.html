@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChatAI Test Runner</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 24px; }
+.row { display: flex; gap: 12px; align-items: center; }
+input[type=text] { width: 640px; padding: 8px; }
+button { padding: 8px 16px; }
+pre { background: #111; color: #ccc; padding: 12px; white-space: pre-wrap; max-height: 480px; overflow: auto; font-family: Consolas, Monaco, 'Courier New', monospace; }
+.hint { color: #555; margin-top: 8px; }
+.controls { margin-top: 12px; display: flex; gap: 12px; align-items: center; }
+.line { margin: 0; }
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+.ansi-black { color: #000; }
+.ansi-red { color: #ff4d4d; }
+.ansi-green { color: #4dff4d; }
+.ansi-yellow { color: #ffff66; }
+.ansi-blue { color: #4da3ff; }
+.ansi-magenta { color: #ff4dff; }
+.ansi-cyan { color: #00ffff; }
+.ansi-white { color: #ffffff; }
+.ansi-bright-black { color: #555; }
+.ansi-bright-red { color: #ff6666; }
+.ansi-bright-green { color: #66ff66; }
+.ansi-bright-yellow { color: #ffff80; }
+.ansi-bright-blue { color: #66b3ff; }
+.ansi-bright-magenta { color: #ff66ff; }
+.ansi-bright-cyan { color: #80ffff; }
+.ansi-bright-white { color: #f5f5f5; }
+</style>
+</head>
+<body>
+<h1>ChatAI Test Runner</h1>
+<div class="row">
+<input id="query" type="text" placeholder="Type test case intent">
+<button id="run">Run</button>
+</div>
+<div class="hint">Example: TS - Create Normal order with Basis is C&amp;D</div>
+<div class="controls">
+  <button id="clear">Clear</button>
+  <label><input type="checkbox" id="autoscroll" checked> Auto-scroll</label>
+  <label><input type="checkbox" id="timestamps"> Timestamps</label>
+</div>
+<h3>Output</h3>
+<pre id="out"></pre>
+<script>
+const q = document.getElementById("query")
+const run = document.getElementById("run")
+const out = document.getElementById("out")
+const clearBtn = document.getElementById("clear")
+const autoScroll = document.getElementById("autoscroll")
+const tsToggle = document.getElementById("timestamps")
+
+function escapeHtml(s) {
+  return s.replace(/[&<>\"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))
+}
+function ansiToHtml(s) {
+  // Strip cursor movement and clear line ANSI codes (e.g. ^[[1A, ^[[2K)
+  s = s.replace(/\x1b\[[0-9;]*[A-K]/g, '')
+  // Basic ANSI SGR support: bold(1), underline(4), reset(0,39), 30-37, 90-97 colors
+  let openTags = []
+  const applyCode = code => {
+    code.split(';').forEach(n => {
+      const c = parseInt(n, 10)
+      if (c === 0 || c === 39) { // reset
+        while (openTags.length) html += '</span>', openTags.pop()
+        return
+      }
+      const map = {
+        1: 'ansi-bold',
+        4: 'ansi-underline',
+        30: 'ansi-black', 31: 'ansi-red', 32: 'ansi-green', 33: 'ansi-yellow', 34: 'ansi-blue', 35: 'ansi-magenta', 36: 'ansi-cyan', 37: 'ansi-white',
+        90: 'ansi-bright-black', 91: 'ansi-bright-red', 92: 'ansi-bright-green', 93: 'ansi-bright-yellow', 94: 'ansi-bright-blue', 95: 'ansi-bright-magenta', 96: 'ansi-bright-cyan', 97: 'ansi-bright-white'
+      }
+      const cls = map[c]
+      if (cls) { html += `<span class="${cls}">`; openTags.push(cls) }
+    })
+  }
+  let html = ''
+  const re = /\x1b\[([0-9;]+)m/g
+  let last = 0, m
+  while ((m = re.exec(s)) !== null) {
+    html += escapeHtml(s.slice(last, m.index))
+    applyCode(m[1])
+    last = re.lastIndex
+  }
+  html += escapeHtml(s.slice(last))
+  while (openTags.length) html += '</span>', openTags.pop()
+  return html
+}
+function addLine(text) {
+  const ts = tsToggle.checked ? `[${new Date().toLocaleTimeString()}] ` : ''
+  const html = ansiToHtml(ts + text)
+  out.innerHTML += html + '<br/>'
+  if (autoScroll.checked) out.scrollTop = out.scrollHeight
+}
+
+clearBtn.addEventListener("click", () => { out.textContent = "" })
+
+run.addEventListener("click", async () => {
+  const query = q.value.trim()
+  out.textContent = ""
+  run.disabled = true
+  const es = new EventSource(`/run-stream?q=${encodeURIComponent(query)}`)
+  es.onmessage = (ev) => {
+    addLine(ev.data)
+  }
+  es.addEventListener("done", (ev) => {
+    run.disabled = false
+    es.close()
+  })
+  es.onerror = () => {
+    run.disabled = false
+    es.close()
+  }
+})
+</script>
+</body>
+</html>

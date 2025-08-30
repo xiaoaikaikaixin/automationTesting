@@ -1,0 +1,224 @@
+{
+  "pkgName": "midscene-unknown-package-name",
+  "pkgVersion": "0.0.0",
+  "cacheId": "e2e-testCase-tradingSlip-TS-06-CreateSalesFromUnsold.spec.ts(Create-Sales-from-Unsold-Order)",
+  "aiTasks": [
+    {
+      "prompt": "click the last row which 'SC No.' contains SC/25/ALC/0576",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&Edit=1&ID=60617",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "click the last row which 'SC No.' contains SC/25/ALC/0576 @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Tap",
+                "thought": "Click the text 'SC/25/ALC/0576' which is in the last row.",
+                "param": null,
+                "locate": {
+                  "id": "gcefp",
+                  "prompt": "SC/25/ALC/0576"
+                }
+              }
+            ],
+            "log": "Click the last row which 'SC No.' contains SC/25/ALC/0576.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Tap\",\n      \"thought\": \"Click the text 'SC/25/ALC/0576' which is in the last row.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"gcefp\",\n        \"prompt\": \"SC/25/ALC/0576\"\n      }\n    }\n  ],\n  \"log\": \"Click the last row which 'SC No.' contains SC/25/ALC/0576.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 156,
+              "prompt_tokens": 8454,
+              "total_tokens": 8874
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&Edit=1&ID=60617",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "SC/25/ALC/0576",
+          "response": {
+            "elements": [
+              {
+                "id": "gcefp"
+              }
+            ]
+          },
+          "element": {
+            "id": "gcefp",
+            "indexId": 91,
+            "center": [
+              426,
+              625
+            ],
+            "rect": {
+              "left": 375,
+              "top": 618,
+              "width": 102,
+              "height": 15,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "scroll to the right to the end",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&Edit=1&ID=60617",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll to the right to the end @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Scroll",
+                "thought": "Scroll the page to the right until the end.",
+                "param": {
+                  "direction": "right",
+                  "scrollType": "untilRight"
+                },
+                "locate": null
+              }
+            ],
+            "log": "Scroll the page to the right until the end.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Scroll\",\n      \"thought\": \"Scroll the page to the right until the end.\",\n      \"param\": {\n        \"direction\": \"right\",\n        \"scrollType\": \"untilRight\"\n      },\n      \"locate\": null\n    }\n  ],\n  \"log\": \"Scroll the page to the right until the end.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 117,
+              "prompt_tokens": 8439,
+              "total_tokens": 8637
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "scroll vertically to ensure the 'Quantity (UOM)To Tag (Click Cell To Edit)' field is visible",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&Edit=1&ID=60617",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll vertically to ensure the 'Quantity (UOM)To Tag (Click Cell To Edit)' field is visible @ ",
+          "response": {
+            "actions": [],
+            "log": "The element 'Quantity (UOM) To Tag (Click Cell To Edit)' is already visible on the page. No scrolling is needed.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [],\n  \"log\": \"The element 'Quantity (UOM) To Tag (Click Cell To Edit)' is already visible on the page. No scrolling is needed.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 69,
+              "prompt_tokens": 8373,
+              "total_tokens": 8618
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "click the cell containing '0.000' in the 'Quantity (UOM)To Tag (Click Cell To Edit)' column of the last record",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&Edit=1&ID=60617",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "click the cell containing '0.000' in the 'Quantity (UOM)To Tag (Click Cell To Edit)' column of the last record @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Tap",
+                "thought": "Click the cell containing '0.000' in the 'Quantity (UOM) To Tag (Click Cell To Edit)' column of the last record.",
+                "param": null,
+                "locate": {
+                  "id": "hiajc",
+                  "prompt": "the cell containing '0.000' in the 'Quantity (UOM) To Tag (Click Cell To Edit)' column of the last record"
+                }
+              }
+            ],
+            "log": "Click the cell containing '0.000' in the 'Quantity (UOM) To Tag (Click Cell To Edit)' column of the last record.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Tap\",\n      \"thought\": \"Click the cell containing '0.000' in the 'Quantity (UOM) To Tag (Click Cell To Edit)' column of the last record.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"hiajc\",\n        \"prompt\": \"the cell containing '0.000' in the 'Quantity (UOM) To Tag (Click Cell To Edit)' column of the last record\"\n      }\n    }\n  ],\n  \"log\": \"Click the cell containing '0.000' in the 'Quantity (UOM) To Tag (Click Cell To Edit)' column of the last record.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 193,
+              "prompt_tokens": 8383,
+              "prompt_tokens_details": {
+                "cached_tokens": 8175
+              },
+              "total_tokens": 8774
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&Edit=1&ID=60617",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "the cell containing '0.000' in the 'Quantity (UOM) To Tag (Click Cell To Edit)' column of the last record",
+          "response": {
+            "elements": [
+              {
+                "id": "hiajc"
+              }
+            ]
+          },
+          "element": {
+            "id": "hiajc",
+            "indexId": 100,
+            "center": [
+              1473,
+              625
+            ],
+            "rect": {
+              "left": 1456,
+              "top": 618,
+              "width": 35,
+              "height": 15,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

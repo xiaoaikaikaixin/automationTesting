@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICOF America Inc. Trading Slips</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .menu-container {
+            display: flex;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .menu-column {
+            flex: 1;
+            padding: 10px;
+            border-right: 1px solid #ddd;
+        }
+
+        .menu-column:last-child {
+            border-right: none;
+        }
+
+        .menu-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .menu-item {
+            padding: 5px 0;
+            color: #0066cc;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            text-decoration: underline;
+        }
+
+        .search-panel {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .search-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+            gap: 10px;
+        }
+
+        .search-field {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .search-field label {
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .search-field input,
+        .search-field select {
+            padding: 8px 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .date-field {
+            position: relative;
+        }
+
+        .date-field input {
+            padding-right: 30px;
+        }
+
+        .date-field .calendar-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #0066cc;
+            cursor: pointer;
+        }
+
+        .search-button {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .search-button:hover {
+            background-color: #0052a3;
+        }
+
+        .data-table-container {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .pagination {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pagination-button {
+            background: none;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+            color: #0066cc;
+        }
+
+        .pagination-button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .pagination-info {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .page-size-selector {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .page-size-selector select {
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: 600;
+            color: #333;
+            position: sticky;
+            top: 0;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .view-link {
+            color: #0066cc;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .view-link:hover {
+            text-decoration: underline;
+        }
+
+        .view-icon {
+            margin-right: 5px;
+        }
+
+        .export-button {
+            background-color: #fff;
+            color: #0066cc;
+            border: 1px solid #0066cc;
+            border-radius: 4px;
+            padding: 6px 12px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+        }
+
+        .export-button:hover {
+            background-color: #e6f0ff;
+        }
+
+        .table-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+        }
+
+        .page-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .menu-container {
+                flex-direction: column;
+            }
+
+            .menu-column {
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .menu-column:last-child {
+                border-bottom: none;
+            }
+
+            .search-row {
+                flex-direction: column;
+            }
+
+            .search-field {
+                width: 100%;
+            }
+
+            .table-responsive {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-title">ICOF America Inc. Trading Slips</div>
+        
+        <div class="menu-container">
+            <div class="menu-column">
+                <div class="menu-title">Sales Transaction</div>
+                <div class="menu-item">New Trading Slip</div>
+                <div class="menu-item">Trading Slip</div>
+                <div class="menu-item">Sales Contract</div>
+                <div class="menu-item">Sales Contract (Batch Printing)</div>
+                <div class="menu-item">Sales Contract Direct Shipment</div>
+                <div class="menu-item">Contract Instruction</div>
+                <div class="menu-item">Contract Instruction Direct Shipment</div>
+                <div class="menu-item">Sub Contract Instruction</div>
+            </div>
+            <div class="menu-column">
+                <div class="menu-title">Master Trade Contract</div>
+                <div class="menu-item">New Master Contract Trading Slip</div>
+                <div class="menu-item">Master Contract Trading Slip</div>
+                <div class="menu-item">Master Contract Sales Contract</div>
+                <div class="menu-item">Master Contract Purchase Order</div>
+            </div>
+            <div class="menu-column">
+                <div class="menu-title">Purchase Transaction</div>
+                <div class="menu-item">Purchase Order</div>
+                <div class="menu-item">Purchase Order (Batch Printing)</div>
+                <div class="menu-item">Freight Cost Bulk Update</div>
+            </div>
+            <div class="menu-column">
+                <div class="menu-title">DTC Transaction</div>
+                <div class="menu-item">Direct Trade Commission</div>
+                <div class="menu-item">Direct Trade Commission (View)</div>
+            </div>
+        </div>
+
+        <div class="search-panel">
+            <div class="search-row">
+                <div class="search-field date-field">
+                    <label for="traded-date-from">Traded Date</label>
+                    <input type="text" id="traded-date-from" placeholder="From">
+                    <span class="calendar-icon">📅</span>
+                </div>
+                <div class="search-field date-field">
+                    <label for="traded-date-to">&nbsp;</label>
+                    <input type="text" id="traded-date-to" placeholder="To">
+                    <span class="calendar-icon">📅</span>
+                </div>
+            </div>
+            <div class="search-row">
+                <div class="search-field">
+                    <label for="buyer">Buyer</label>
+                    <select id="buyer">
+                        <option value="1" selected>ICOF America Inc.</option>
+                        <option value="2">Other Buyer</option>
+                    </select>
+                </div>
+                <div class="search-field">
+                    <label for="seller">Seller</label>
+                    <select id="seller">
+                        <option value="">Select Seller</option>
+                        <option value="1">Luxury & Popular Trading Co.</option>
+                        <option value="2">Other Seller</option>
+                    </select>
+                </div>
+            </div>
+            <div class="search-row">
+                <div class="search-field">
+                    <label for="special-order-type">Special Order Type</label>
+                    <select id="special-order-type">
+                        <option value="">Select Order Type</option>
+                        <option value="normal">Normal</option>
+                        <option value="special">Special</option>
+                    </select>
+                </div>
+            </div>
+            <div class="search-row">
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+
+        <div class="data-table-container">
+            <div class="table-header">
+                <div class="pagination">
+                    <button class="pagination-button">⏪</button>
+                    <button class="pagination-button">◀</button>
+                    <div class="pagination-info">
+                        Page: <input type="text" value="1" style="width: 40px; text-align: center;"> of 1
+                    </div>
+                    <button class="pagination-button">▶</button>
+                    <button class="pagination-button">⏩</button>
+                </div>
+                <div class="page-size-selector">
+                    <select>
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                </div>
+                <div>
+                    <button class="export-button">Export - Excel</button>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Special Order Type</th>
+                            <th>Division</th>
+                            <th>Traded By</th>
+                            <th>SC No.</th>
+                            <th>Date</th>
+                            <th>Buyer</th>
+                            <th>Product</th>
+                            <th>Product Form</th>
+                            <th>Packaging Profile Name</th>
+                            <th>Total No Of Units</th>
+                            <th>Quantity</th>
+                            <th>Currency</th>
+                            <th>Price/MT (USD)</th>
+                            <th>Basis</th>
+                            <th>Discharge Country</th>
+                            <th>Discharge Port</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Normal</td>
+                            <td>ALC</td>
+                            <td>John Smith</td>
+                            <td>SC/23/ALC/0129</td>
+                            <td>15-Jun-2023</td>
+                            <td>ICOF America Inc.</td>
+                            <td>Fatty Alcohol C12-14</td>
+                            <td>Liquid</td>
+                            <td>Bulk in ISO Tank</td>
+                            <td>20.000</td>
+                            <td>100.000</td>
+                            <td>USD</td>
+                            <td>1,850.00</td>
+                            <td>CIF</td>
+                            <td>United States</td>
+                            <td>Houston</td>
+                        </tr>
+                        <tr>
+                            <td>Normal</td>
+                            <td>ALC</td>
+                            <td>John Smith</td>
+                            <td>SC/23/ALC/0130</td>
+                            <td>22-Jun-2023</td>
+                            <td>ICOF America Inc.</td>
+                            <td>Fatty Alcohol C16-18</td>
+                            <td>Liquid</td>
+                            <td>Bulk in ISO Tank</td>
+                            <td>18.000</td>
+                            <td>90.000</td>
+                            <td>USD</td>
+                            <td>1,920.00</td>
+                            <td>CIF</td>
+                            <td>United States</td>
+                            <td>New Orleans</td>
+                        </tr>
+                        <tr>
+                            <td>Normal</td>
+                            <td>ALC</td>
+                            <td>Sarah Johnson</td>
+                            <td>SC/23/ALC/0145</td>
+                            <td>10-Jul-2023</td>
+                            <td>ICOF America Inc.</td>
+                            <td>Fatty Alcohol C8-10</td>
+                            <td>Liquid</td>
+                            <td>Bulk in Flexitank</td>
+                            <td>15.000</td>
+                            <td>75.000</td>
+                            <td>USD</td>
+                            <td>1,780.00</td>
+                            <td>FOB</td>
+                            <td>United States</td>
+                            <td>Los Angeles</td>
+                        </tr>
+                        <tr>
+                            <td>Special</td>
+                            <td>ALC</td>
+                            <td>Sarah Johnson</td>
+                            <td>SC/23/ALC/0152</td>
+                            <td>18-Jul-2023</td>
+                            <td>ICOF America Inc.</td>
+                            <td>Fatty Alcohol C12-14 (Technical Grade)</td>
+                            <td>Liquid</td>
+                            <td>Bulk in ISO Tank</td>
+                            <td>22.000</td>
+                            <td>110.000</td>
+                            <td>USD</td>
+                            <td>1,750.00</td>
+                            <td>CIF</td>
+                            <td>United States</td>
+                            <td>Houston</td>
+                        </tr>
+                        <tr>
+                            <td>Normal</td>
+                            <td>ALC</td>
+                            <td>Michael Brown</td>
+                            <td>SC/23/ALC/0178</td>
+                            <td>05-Aug-2023</td>
+                            <td>ICOF America Inc.</td>
+                            <td>Fatty Alcohol C16-18 (Cosmetic Grade)</td>
+                            <td>Liquid</td>
+                            <td>Bulk in Flexitank</td>
+                            <td>16.000</td>
+                            <td>80.000</td>
+                            <td>USD</td>
+                            <td>2,050.00</td>
+                            <td>CIF</td>
+                            <td>United States</td>
+                            <td>New York</td>
+                        </tr>
+                        <tr>
+                            <td>Normal</td>
+                            <td>ALC</td>
+                            <td>Michael Brown</td>
+                            <td>SC/23/ALC/0185</td>
+                            <td>12-Aug-2023</td>
+                            <td>ICOF America Inc.</td>
+                            <td>Fatty Alcohol C8-10 (Technical Grade)</td>
+                            <td>Liquid</td>
+                            <td>Bulk in ISO Tank</td>
+                            <td>18.000</td>
+                            <td>90.000</td>
+                            <td>USD</td>
+                            <td>1,720.00</td>
+                            <td>FOB</td>
+                            <td>United States</td>
+                            <td>Seattle</td>
+                        </tr>
+                        <tr>
+                            <td>Special</td>
+                            <td>ALC</td>
+                            <td>Emily Davis</td>
+                            <td>SC/23/ALC/0201</td>
+                            <td>25-Aug-2023</td>
+                            <td>ICOF America Inc.</td>
+                            <td>Fatty Alcohol Blend (C12-18)</td>
+                            <td>Liquid</td>
+                            <td>Bulk in ISO Tank</td>
+                            <td>20.000</td>
+                            <td>100.000</td>
+                            <td>USD</td>
+                            <td>1,880.00</td>
+                            <td>CIF</td>
+                            <td>United States</td>
+                            <td>Miami</td>
+                        </tr>
+                        <tr>
+                            <td>Normal</td>
+                            <td>ALC</td>
+                            <td>Emily Davis</td>
+                            <td>SC/23/ALC/0215</td>
+                            <td>10-Sep-2023</td>
+                            <td>ICOF America Inc.</td>
+                            <td>Fatty Alcohol C12-14 (Cosmetic Grade)</td>
+                            <td>Liquid</td>
+                            <td>Bulk in Flexitank</td>
+                            <td>15.000</td>
+                            <td>75.000</td>
+                            <td>USD</td>
+                            <td>1,950.00</td>
+                            <td>CIF</td>
+                            <td>United States</td>
+                            <td>Boston</td>
+                        </tr>
+                        <tr>
+                            <td>Normal</td>
+                            <td>ALC</td>
+                            <td>Robert Wilson</td>
+                            <td>SC/23/ALC/0230</td>
+                            <td>22-Sep-2023</td>
+                            <td>ICOF America Inc.</td>
+                            <td>Fatty Alcohol C16-18 (Technical Grade)</td>
+                            <td>Liquid</td>
+                            <td>Bulk in ISO Tank</td>
+                            <td>22.000</td>
+                            <td>110.000</td>
+                            <td>USD</td>
+                            <td>1,820.00</td>
+                            <td>FOB</td>
+                            <td>United States</td>
+                            <td>Charleston</td>
+                        </tr>
+                        <tr>
+                            <td>Special</td>
+                            <td>ALC</td>
+                            <td>Robert Wilson</td>
+                            <td>SC/23/ALC/0245</td>
+                            <td>05-Oct-2023</td>
+                            <td>ICOF America Inc.</td>
+                            <td>Fatty Alcohol Blend (C8-18)</td>
+                            <td>Liquid</td>
+                            <td>Bulk in ISO Tank</td>
+                            <td>20.000</td>
+                            <td>100.000</td>
+                            <td>USD</td>
+                            <td>1,900.00</td>
+                            <td>CIF</td>
+                            <td>United States</td>
+                            <td>Houston</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-footer">
+                <div class="pagination-info">
+                    Showing records 1 - 10 of 10
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add event listeners for interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Calendar icon click handlers
+            const calendarIcons = document.querySelectorAll('.calendar-icon');
+            calendarIcons.forEach(icon => {
+                icon.addEventListener('click', function() {
+                    alert('Calendar would open here');
+                });
+            });
+
+            // Search button click handler
+            const searchButton = document.querySelector('.search-button');
+            searchButton.addEventListener('click', function() {
+                alert('Search functionality would be implemented here');
+            });
+
+            // Pagination buttons click handlers
+            const paginationButtons = document.querySelectorAll('.pagination-button');
+            paginationButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('Pagination would be implemented here');
+                });
+            });
+
+            // Export button click handler
+            const exportButton = document.querySelector('.export-button');
+            exportButton.addEventListener('click', function() {
+                alert('Export functionality would be implemented here');
+            });
+
+            // Add view functionality to rows
+            const tableRows = document.querySelectorAll('tbody tr');
+            tableRows.forEach(row => {
+                row.addEventListener('click', function() {
+                    const scNo = this.querySelector('td:nth-child(4)').textContent;
+                    alert(`View details for ${scNo}`);
+                });
+                row.style.cursor = 'pointer';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+{
+  "pkgName": "midscene-unknown-package-name",
+  "pkgVersion": "0.0.0",
+  "cacheId": "e2e-testCase-report-freight-RE-03-FreightBookingCancellation.spec.ts(Download-Sales-Details-Report)",
+  "aiTasks": [
+    {
+      "prompt": "scroll to the right to stop at the 'Loading Port' column value",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://apps650swduat01.icofgroup.coe.local/NCTS-UAT/FreightBooking/FreightBookingCancellation.aspx",
+            "size": {
+              "width": 1920,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll to the right to stop at the 'Loading Port' column value @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Scroll",
+                "thought": "Scrolling the page to the right to see more content, aiming to stop at the 'Loading Port' column value as requested, although it is already visible.",
+                "param": {
+                  "direction": "right",
+                  "scrollType": "once",
+                  "distance": null
+                },
+                "locate": null
+              }
+            ],
+            "log": "Scrolling the page to the right to see more content.",
+            "error": null,
+            "more_actions_needed_by_instruction": true,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Scroll\",\n      \"thought\": \"Scrolling the page to the right to see more content, aiming to stop at the 'Loading Port' column value as requested, although it is already visible.\",\n      \"param\": {\n        \"direction\": \"right\",\n        \"scrollType\": \"once\",\n        \"distance\": null\n      },\n      \"locate\": null\n    }\n  ],\n  \"log\": \"Scrolling the page to the right to see more content.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": true\n}",
+            "usage": {
+              "completion_tokens": 144,
+              "prompt_tokens": 9374,
+              "total_tokens": 11202
+            }
+          }
+        },
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://apps650swduat01.icofgroup.coe.local/NCTS-UAT/FreightBooking/FreightBookingCancellation.aspx",
+            "size": {
+              "width": 1920,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll to the right to stop at the 'Loading Port' column value @ - Scrolling the page to the right to see more content.",
+          "response": {
+            "actions": [],
+            "log": "The 'Loading Port' column value is already visible on the page.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [],\n  \"log\": \"The 'Loading Port' column value is already visible on the page.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 55,
+              "prompt_tokens": 9431,
+              "total_tokens": 9646
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "scroll vertically to ensure the 'Loading Port' field is visible",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://apps650swduat01.icofgroup.coe.local/NCTS-UAT/FreightBooking/FreightBookingCancellation.aspx",
+            "size": {
+              "width": 1920,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll vertically to ensure the 'Loading Port' field is visible @ ",
+          "response": {
+            "actions": [],
+            "log": "The 'Loading Port' field is already visible on the page.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [],\n  \"log\": \"The 'Loading Port' field is already visible on the page.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 54,
+              "prompt_tokens": 9378,
+              "prompt_tokens_details": {
+                "cached_tokens": 9189
+              },
+              "total_tokens": 9576
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "scroll to the right to stop at the end",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://apps650swduat01.icofgroup.coe.local/NCTS-UAT/FreightBooking/FreightBookingCancellation.aspx",
+            "size": {
+              "width": 1920,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll to the right to stop at the end @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Scroll",
+                "thought": "Scroll the table to the right until the end.",
+                "param": {
+                  "direction": "right",
+                  "scrollType": "untilRight"
+                },
+                "locate": {
+                  "id": "bhbng",
+                  "prompt": "The scrollbar on the right side of the table"
+                }
+              }
+            ],
+            "log": "Scroll the table to the right until the end.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Scroll\",\n      \"thought\": \"Scroll the table to the right until the end.\",\n      \"param\": {\n        \"direction\": \"right\",\n        \"scrollType\": \"untilRight\"\n      },\n      \"locate\": {\n        \"id\": \"bhbng\",\n        \"prompt\": \"The scrollbar on the right side of the table\"\n      }\n    }\n  ],\n  \"log\": \"Scroll the table to the right until the end.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 147,
+              "prompt_tokens": 9375,
+              "prompt_tokens_details": {
+                "cached_tokens": 9188
+              },
+              "total_tokens": 9725
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "https://apps650swduat01.icofgroup.coe.local/NCTS-UAT/FreightBooking/FreightBookingCancellation.aspx",
+            "size": {
+              "width": 1920,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "The scrollbar on the right side of the table",
+          "response": {
+            "elements": [
+              {
+                "id": "bhbng"
+              }
+            ]
+          },
+          "element": {
+            "id": "bhbng",
+            "indexId": 110,
+            "center": [
+              1904,
+              376
+            ],
+            "rect": {
+              "left": 1901,
+              "top": 283,
+              "width": 7,
+              "height": 187,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "scroll vertically to ensure the 'Status' field is visible",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://apps650swduat01.icofgroup.coe.local/NCTS-UAT/FreightBooking/FreightBookingCancellation.aspx",
+            "size": {
+              "width": 1920,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll vertically to ensure the 'Status' field is visible @ ",
+          "response": {
+            "actions": [],
+            "log": "The 'Status' field is already visible on the page.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [],\n  \"log\": \"The 'Status' field is already visible on the page.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 53,
+              "prompt_tokens": 9377,
+              "prompt_tokens_details": {
+                "cached_tokens": 9189
+              },
+              "total_tokens": 9527
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

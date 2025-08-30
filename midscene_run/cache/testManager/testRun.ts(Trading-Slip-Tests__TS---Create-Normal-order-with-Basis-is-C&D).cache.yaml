@@ -1,0 +1,24 @@
+midsceneVersion: 0.22.1
+cacheId: >-
+  testManager\testRun.ts(Trading-Slip-Tests__TS---Create-Normal-order-with-Basis-is-C&D)
+caches:
+  - type: plan
+    prompt: scroll to the right to stop at the 'Buyer Goods Description' column
+    yamlWorkflow: |
+      tasks:
+        - name: scroll to the right to stop at the 'Buyer Goods Description' column
+          flow:
+            - aiScroll: null
+              direction: right
+              scrollType: untilRight
+              distance: null
+  - type: plan
+    prompt: scroll vertically to ensure the 'Buyer Goods Description' field is visible
+    yamlWorkflow: |
+      tasks:
+        - name: scroll vertically to ensure the 'Buyer Goods Description' field is visible
+          flow:
+            - aiScroll: null
+              direction: down
+              scrollType: untilBottom
+              distance: null

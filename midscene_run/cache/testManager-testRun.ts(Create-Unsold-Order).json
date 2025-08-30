@@ -1,0 +1,103 @@
+{
+  "pkgName": "midscene-unknown-package-name",
+  "pkgVersion": "0.0.0",
+  "cacheId": "testManager-testRun.ts(Create-Unsold-Order)",
+  "aiTasks": [
+    {
+      "prompt": "scroll to the right to stop at the 'Buyer Goods Description' column",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&ID=61649",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll to the right to stop at the 'Buyer Goods Description' column @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Scroll",
+                "thought": "Scroll the page to the right to view the 'Buyer Goods Description' column.",
+                "param": {
+                  "direction": "right",
+                  "scrollType": "once",
+                  "distance": null
+                },
+                "locate": null
+              }
+            ],
+            "log": "Scroll the page to the right to view the 'Buyer Goods Description' column.",
+            "error": null,
+            "more_actions_needed_by_instruction": true,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Scroll\",\n      \"thought\": \"Scroll the page to the right to view the 'Buyer Goods Description' column.\",\n      \"param\": {\n        \"direction\": \"right\",\n        \"scrollType\": \"once\",\n        \"distance\": null\n      },\n      \"locate\": null\n    }\n  ],\n  \"log\": \"Scroll the page to the right to view the 'Buyer Goods Description' column.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": true\n}",
+            "usage": {
+              "completion_tokens": 134,
+              "prompt_tokens": 6693,
+              "total_tokens": 7146
+            }
+          }
+        },
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&ID=61649",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll to the right to stop at the 'Buyer Goods Description' column @ - Scroll the page to the right to view the 'Buyer Goods Description' column.",
+          "response": {
+            "actions": [],
+            "log": "The 'Buyer Goods Description' column is already visible.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [],\n  \"log\": \"The 'Buyer Goods Description' column is already visible.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 52,
+              "prompt_tokens": 6743,
+              "total_tokens": 6887
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "scroll vertically to ensure the 'Buyer Goods Description' field is visible",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&ID=61649",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll vertically to ensure the 'Buyer Goods Description' field is visible @ ",
+          "response": {
+            "actions": [],
+            "log": "The 'Buyer Goods Description' field is already visible on the page. No scrolling is needed.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [],\n  \"log\": \"The 'Buyer Goods Description' field is already visible on the page. No scrolling is needed.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 60,
+              "prompt_tokens": 6686,
+              "prompt_tokens_details": {
+                "cached_tokens": 6222
+              },
+              "total_tokens": 6857
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

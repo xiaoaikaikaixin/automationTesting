@@ -1,0 +1,264 @@
+{
+  "pkgName": "midscene-unknown-package-name",
+  "pkgVersion": "0.0.0",
+  "cacheId": "testManager-testRun.ts(Create-Sales-from-Unsold-Order)",
+  "aiTasks": [
+    {
+      "prompt": "click the last row which 'SC No.' contains SC/25/ALC/0611",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&Edit=1&ID=61651",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "click the last row which 'SC No.' contains SC/25/ALC/0611 @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Tap",
+                "thought": "Click the checkbox for the row with 'SC/25/ALC/0611'. The checkbox is located to the left of the text 'SC/25/ALC/0611'.",
+                "param": null,
+                "locate": {
+                  "id": "gbngc",
+                  "prompt": "The text 'SC/25/ALC/0611' in the last row"
+                }
+              }
+            ],
+            "log": "Click the checkbox for the last row which 'SC No.' contains SC/25/ALC/0611.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Tap\",\n      \"thought\": \"Click the checkbox for the row with 'SC/25/ALC/0611'. The checkbox is located to the left of the text 'SC/25/ALC/0611'.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"gbngc\",\n        \"prompt\": \"The text 'SC/25/ALC/0611' in the last row\"\n      }\n    }\n  ],\n  \"log\": \"Click the checkbox for the last row which 'SC No.' contains SC/25/ALC/0611.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 189,
+              "prompt_tokens": 9132,
+              "total_tokens": 9727
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&Edit=1&ID=61651",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "The text 'SC/25/ALC/0611' in the last row",
+          "response": {
+            "elements": [
+              {
+                "id": "gbngc"
+              }
+            ]
+          },
+          "element": {
+            "id": "gbngc",
+            "indexId": 102,
+            "center": [
+              426,
+              648
+            ],
+            "rect": {
+              "left": 375,
+              "top": 641,
+              "width": 102,
+              "height": 15,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "scroll to the right to the end",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&Edit=1&ID=61651",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll to the right to the end @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Scroll",
+                "thought": "Scroll the 'Unsold Order Selection' section to the right until the end.",
+                "param": {
+                  "direction": "right",
+                  "scrollType": "untilRight"
+                },
+                "locate": {
+                  "id": "caifb",
+                  "prompt": "The Unsold Order Selection section"
+                }
+              }
+            ],
+            "log": "Scroll the 'Unsold Order Selection' section to the right until the end.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Scroll\",\n      \"thought\": \"Scroll the 'Unsold Order Selection' section to the right until the end.\",\n      \"param\": {\n        \"direction\": \"right\",\n        \"scrollType\": \"untilRight\"\n      },\n      \"locate\": {\n        \"id\": \"caifb\",\n        \"prompt\": \"The Unsold Order Selection section\"\n      }\n    }\n  ],\n  \"log\": \"Scroll the 'Unsold Order Selection' section to the right until the end.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 155,
+              "prompt_tokens": 9117,
+              "total_tokens": 9392
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&Edit=1&ID=61651",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "The Unsold Order Selection section",
+          "response": {
+            "elements": [
+              {
+                "id": "caifb"
+              }
+            ]
+          },
+          "element": {
+            "id": "caifb",
+            "indexId": 2,
+            "center": [
+              960,
+              488
+            ],
+            "rect": {
+              "left": 310,
+              "top": 133,
+              "width": 1300,
+              "height": 711,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "scroll vertically to ensure the 'Quantity (UOM)To Tag (Click Cell To Edit)' field is visible",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&Edit=1&ID=61651",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll vertically to ensure the 'Quantity (UOM)To Tag (Click Cell To Edit)' field is visible @ ",
+          "response": {
+            "actions": [],
+            "log": "The element 'Quantity (UOM) To Tag (Click Cell To Edit)' is already visible on the page.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [],\n  \"log\": \"The element 'Quantity (UOM) To Tag (Click Cell To Edit)' is already visible on the page.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 64,
+              "prompt_tokens": 9040,
+              "prompt_tokens_details": {
+                "cached_tokens": 829
+              },
+              "total_tokens": 9212
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "click the cell containing '0.000' in the 'Quantity (UOM)To Tag (Click Cell To Edit)' column of the last record",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&Edit=1&ID=61651",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "click the cell containing '0.000' in the 'Quantity (UOM)To Tag (Click Cell To Edit)' column of the last record @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Tap",
+                "thought": "Click the cell containing '0.000' in the 'Quantity (UOM) To Tag (Click Cell To Edit)' column of the last record.",
+                "param": null,
+                "locate": {
+                  "id": "koclc",
+                  "prompt": "cell containing 0.000 in the last row"
+                }
+              }
+            ],
+            "log": "Click the cell containing '0.000' in the 'Quantity (UOM) To Tag (Click Cell To Edit)' column of the last record.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Tap\",\n      \"thought\": \"Click the cell containing '0.000' in the 'Quantity (UOM) To Tag (Click Cell To Edit)' column of the last record.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"koclc\",\n        \"prompt\": \"cell containing 0.000 in the last row\"\n      }\n    }\n  ],\n  \"log\": \"Click the cell containing '0.000' in the 'Quantity (UOM) To Tag (Click Cell To Edit)' column of the last record.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 175,
+              "prompt_tokens": 9050,
+              "prompt_tokens_details": {
+                "cached_tokens": 8298
+              },
+              "total_tokens": 9460
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&Edit=1&ID=61651",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "cell containing 0.000 in the last row",
+          "response": {
+            "elements": [
+              {
+                "id": "koclc"
+              }
+            ]
+          },
+          "element": {
+            "id": "koclc",
+            "indexId": 111,
+            "center": [
+              1473,
+              648
+            ],
+            "rect": {
+              "left": 1456,
+              "top": 641,
+              "width": 35,
+              "height": 15,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

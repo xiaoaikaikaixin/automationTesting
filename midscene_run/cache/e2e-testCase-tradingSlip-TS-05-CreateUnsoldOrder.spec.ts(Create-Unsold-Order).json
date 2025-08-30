@@ -1,0 +1,210 @@
+{
+  "pkgName": "midscene-unknown-package-name",
+  "pkgVersion": "0.0.0",
+  "cacheId": "e2e-testCase-tradingSlip-TS-05-CreateUnsoldOrder.spec.ts(Create-Unsold-Order)",
+  "aiTasks": [
+    {
+      "prompt": "scroll to the right to stop at the 'Buyer Goods Description' column",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&ID=60610",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll to the right to stop at the 'Buyer Goods Description' column @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Scroll",
+                "thought": "Scroll the page to the right to bring the 'Buyer Goods Description' column into view.",
+                "locate": null,
+                "param": {
+                  "direction": "right",
+                  "scrollType": "once"
+                }
+              }
+            ],
+            "log": "Scroll the page to the right.",
+            "error": null,
+            "more_actions_needed_by_instruction": true,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Scroll\",\n      \"thought\": \"Scroll the page to the right to bring the 'Buyer Goods Description' column into view.\",\n      \"locate\": null,\n      \"param\": {\n        \"direction\": \"right\",\n        \"scrollType\": \"once\"\n      }\n    }\n  ],\n  \"log\": \"Scroll the page to the right.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": true\n}",
+            "usage": {
+              "completion_tokens": 122,
+              "prompt_tokens": 6694,
+              "total_tokens": 8328
+            }
+          }
+        },
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&ID=60610",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll to the right to stop at the 'Buyer Goods Description' column @ - Scroll the page to the right.",
+          "response": {
+            "actions": [],
+            "log": "The 'Buyer Goods Description' column is already visible.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [],\n  \"log\": \"The 'Buyer Goods Description' column is already visible.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 52,
+              "prompt_tokens": 6735,
+              "total_tokens": 6901
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "scroll vertically to ensure the 'Buyer Goods Description' field is visible",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&ID=60610",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll vertically to ensure the 'Buyer Goods Description' field is visible @ ",
+          "response": {
+            "actions": [],
+            "log": "The 'Buyer Goods Description' field is already visible on the page.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [],\n  \"log\": \"The 'Buyer Goods Description' field is already visible on the page.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 55,
+              "prompt_tokens": 6687,
+              "prompt_tokens_details": {
+                "cached_tokens": 6222
+              },
+              "total_tokens": 6848
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "scroll horizontally to the right to stop at the 'Currency' column",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryFreightCharge.aspx?Type=TRADING_SLIP&Edit=1&ID=60610",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll horizontally to the right to stop at the 'Currency' column @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Scroll",
+                "thought": "Scroll the table horizontally to the right to potentially reveal more columns or ensure the 'Currency' column is in view.",
+                "param": {
+                  "direction": "right",
+                  "scrollType": "once"
+                },
+                "locate": {
+                  "id": "hhghk",
+                  "prompt": "Freight Charge No. header"
+                }
+              }
+            ],
+            "log": "Scroll the table horizontally to the right.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Scroll\",\n      \"thought\": \"Scroll the table horizontally to the right to potentially reveal more columns or ensure the 'Currency' column is in view.\",\n      \"param\": {\n        \"direction\": \"right\",\n        \"scrollType\": \"once\"\n      },\n      \"locate\": {\n        \"id\": \"hhghk\",\n        \"prompt\": \"Freight Charge No. header\"\n      }\n    }\n  ],\n  \"log\": \"Scroll the table horizontally to the right.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 152,
+              "prompt_tokens": 7720,
+              "prompt_tokens_details": {
+                "cached_tokens": 802
+              },
+              "total_tokens": 9579
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryFreightCharge.aspx?Type=TRADING_SLIP&Edit=1&ID=60610",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "Freight Charge No. header",
+          "response": {
+            "elements": [
+              {
+                "id": "hhghk"
+              }
+            ]
+          },
+          "element": {
+            "id": "hhghk",
+            "indexId": 85,
+            "center": [
+              135,
+              417
+            ],
+            "rect": {
+              "left": 98,
+              "top": 398,
+              "width": 74,
+              "height": 39,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "scroll vertically to ensure the 'Currency' column is visible",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryFreightCharge.aspx?Type=TRADING_SLIP&Edit=1&ID=60610",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll vertically to ensure the 'Currency' column is visible @ ",
+          "response": {
+            "actions": [],
+            "log": "The 'Currency' column is already visible on the page.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [],\n  \"log\": \"The 'Currency' column is already visible on the page.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 53,
+              "prompt_tokens": 7730,
+              "total_tokens": 7882
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

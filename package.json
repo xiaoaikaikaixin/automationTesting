@@ -1,0 +1,43 @@
+{
+  "name": "ncts-automation",
+  "version": "1.0.0",
+  "description": "NCTS Test Automation Framework with Excel Data Extraction",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report",
+    "chatai": "ts-node ./scripts/chatai-server.ts"
+  },
+  "dependencies": {
+    "fs-extra": "^11.3.0",
+    "path": "^0.12.7",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@midscene/cli": "^0.28.8",
+    "@midscene/web": "^1.7.7",
+    "@playwright/test": "^1.59.1",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.19.8",
+    "playwright": "^1.58.2",
+    "ts-node": "^10.9.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "automation",
+    "testing",
+    "playwright",
+    "excel",
+    "data-extraction",
+    "e2e"
+  ],
+  "author": "Test Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

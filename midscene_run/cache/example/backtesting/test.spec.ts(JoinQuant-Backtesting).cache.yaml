@@ -1,0 +1,99 @@
+midsceneVersion: 0.22.1
+cacheId: example\backtesting\test.spec.ts(JoinQuant-Backtesting)
+caches:
+  - type: locate
+    prompt: 密码登录
+    xpaths:
+      - /html/body/div[2]/div[1]/div[1]/ul[1]/li[2]
+  - type: locate
+    prompt: 手机号码 input
+    xpaths:
+      - /html/body/div[2]/div[1]/div[1]/ul[2]/li[1]/div[1]/form[1]/input[1]
+  - type: locate
+    prompt: 密码 input
+    xpaths:
+      - /html/body/div[2]/div[1]/div[1]/ul[2]/li[1]/div[1]/form[1]/input[2]
+  - type: locate
+    prompt: 登录 button
+    xpaths:
+      - "/html/body/div[2]/div[1]/div[1]/ul[2]/li[1]/div[1]/form[1]/button[1][normalize-space()=\"登\_\_录\"]"
+  - type: plan
+    prompt: click '跳过' 按钮
+    yamlWorkflow: |
+      tasks:
+        - name: click '跳过' 按钮
+          flow:
+            - aiTap: The '跳过' button
+  - type: plan
+    prompt: click '不再提示' 按钮
+    yamlWorkflow: |
+      tasks:
+        - name: click '不再提示' 按钮
+          flow:
+            - aiTap: The '不再提示' button
+  - type: locate
+    prompt: The '跳过' button
+    xpaths:
+      - >-
+        /html/body/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/span[2]
+  - type: plan
+    prompt: click '跳过' 按钮
+    yamlWorkflow: |
+      tasks:
+        - name: click '跳过' 按钮
+          flow:
+            - aiTap: The '跳过' button
+  - type: plan
+    prompt: click '不再提示' 按钮
+    yamlWorkflow: |
+      tasks:
+        - name: click '不再提示' 按钮
+          flow:
+            - aiTap: The '不再提示' button
+  - type: plan
+    prompt: click '跳过' 按钮
+    yamlWorkflow: |
+      tasks:
+        - name: click '跳过' 按钮
+          flow:
+            - aiTap: The '跳过' button
+  - type: plan
+    prompt: click '不再提示' 按钮
+    yamlWorkflow: |
+      tasks:
+        - name: click '不再提示' 按钮
+          flow:
+            - aiTap: The '不再提示' button
+  - type: plan
+    prompt: click '跳过' 按钮
+    yamlWorkflow: |
+      tasks:
+        - name: click '跳过' 按钮
+          flow:
+            - aiTap: The '跳过' button
+  - type: locate
+    prompt: The '不再提示' button
+    xpaths:
+      - >-
+        /html/body/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[6]/div[1]/i[1]
+  - type: plan
+    prompt: click '不再提示' 按钮
+    yamlWorkflow: |
+      tasks:
+        - name: click '不再提示' 按钮
+          flow:
+            - aiTap: The '不再提示' button
+  - type: plan
+    prompt: click '跳过' 按钮
+    yamlWorkflow: |
+      tasks:
+        - name: click '跳过' 按钮
+          flow:
+            - aiTap: The '跳过' button
+  - type: plan
+    prompt: click '不再提示' 按钮
+    yamlWorkflow: |
+      tasks:
+        - name: click '不再提示' 按钮
+          flow:
+            - aiTap: The '不再提示' button

@@ -1,0 +1,139 @@
+{
+  "pkgName": "midscene-unknown-package-name",
+  "pkgVersion": "0.0.0",
+  "cacheId": "testManager-testRun.ts(Create-Presold---Offshore-Order)",
+  "aiTasks": [
+    {
+      "prompt": "scroll to the right to stop at the 'Buyer Goods Description' column",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&ID=61654",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll to the right to stop at the 'Buyer Goods Description' column @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Scroll",
+                "thought": "Scroll right to bring the 'Buyer Goods Description' column into view or position it as requested.",
+                "param": {
+                  "direction": "right",
+                  "scrollType": "once"
+                },
+                "locate": {
+                  "id": "kagmm",
+                  "prompt": "Buyer Goods Description column header"
+                }
+              }
+            ],
+            "log": "Scroll right to bring the 'Buyer Goods Description' column into view.",
+            "error": null,
+            "more_actions_needed_by_instruction": true,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Scroll\",\n      \"thought\": \"Scroll right to bring the 'Buyer Goods Description' column into view or position it as requested.\",\n      \"param\": {\n        \"direction\": \"right\",\n        \"scrollType\": \"once\"\n      },\n      \"locate\": {\n        \"id\": \"kagmm\",\n        \"prompt\": \"Buyer Goods Description column header\"\n      }\n    }\n  ],\n  \"log\": \"Scroll right to bring the 'Buyer Goods Description' column into view.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": true\n}",
+            "usage": {
+              "completion_tokens": 153,
+              "prompt_tokens": 6637,
+              "total_tokens": 8483
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&ID=61654",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "Buyer Goods Description column header",
+          "response": {
+            "elements": [
+              {
+                "id": "kagmm"
+              }
+            ]
+          },
+          "element": {
+            "id": "kagmm",
+            "indexId": 55,
+            "center": [
+              1392,
+              281
+            ],
+            "rect": {
+              "left": 1348,
+              "top": 262,
+              "width": 89,
+              "height": 39,
+              "zoom": 1
+            }
+          }
+        },
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&ID=61654",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll to the right to stop at the 'Buyer Goods Description' column @ - Scroll right to bring the 'Buyer Goods Description' column into view.",
+          "response": {
+            "actions": [],
+            "log": "The 'Buyer Goods Description' column is already visible.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [],\n  \"log\": \"The 'Buyer Goods Description' column is already visible.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 52,
+              "prompt_tokens": 6685,
+              "total_tokens": 6830
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "scroll vertically to ensure the 'Buyer Goods Description' field is visible",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryItemDetails.aspx?Type=TRADING_SLIP&ID=61654",
+            "size": {
+              "width": 1905,
+              "height": 945,
+              "dpr": 1
+            }
+          },
+          "prompt": "scroll vertically to ensure the 'Buyer Goods Description' field is visible @ ",
+          "response": {
+            "actions": [],
+            "log": "The 'Buyer Goods Description' field is already visible on the page.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [],\n  \"log\": \"The 'Buyer Goods Description' field is already visible on the page.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 55,
+              "prompt_tokens": 6630,
+              "prompt_tokens_details": {
+                "cached_tokens": 6209
+              },
+              "total_tokens": 6761
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

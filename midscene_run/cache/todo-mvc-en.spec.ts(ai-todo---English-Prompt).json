@@ -1,0 +1,472 @@
+{
+  "pkgName": "midscene-unknown-package-name",
+  "pkgVersion": "0.0.0",
+  "cacheId": "todo-mvc-en.spec.ts(ai-todo---English-Prompt)",
+  "aiTasks": [
+    {
+      "prompt": "Input 'Learn JS today' in the task box input and press the Enter key",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "Input 'Learn JS today' in the task box input and press the Enter key @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Input",
+                "thought": "Input 'Learn JS today' into the task box input field.",
+                "param": {
+                  "value": "Learn JS today"
+                },
+                "locate": {
+                  "id": "lpnid",
+                  "prompt": "Input field with placeholder 'What needs to be done?'"
+                }
+              },
+              {
+                "type": "KeyboardPress",
+                "thought": "Press the Enter key to submit the task.",
+                "param": {
+                  "value": "Enter"
+                }
+              }
+            ],
+            "log": "Input 'Learn JS today' in the task box input and press the Enter key.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Input\",\n      \"thought\": \"Input 'Learn JS today' into the task box input field.\",\n      \"param\": {\n        \"value\": \"Learn JS today\"\n      },\n      \"locate\": {\n        \"id\": \"lpnid\",\n        \"prompt\": \"Input field with placeholder 'What needs to be done?'\"\n      }\n    },\n    {\n      \"type\": \"KeyboardPress\",\n      \"thought\": \"Press the Enter key to submit the task.\",\n      \"param\": {\n        \"value\": \"Enter\"\n      }\n    }\n  ],\n  \"log\": \"Input 'Learn JS today' in the task box input and press the Enter key.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 197,
+              "prompt_tokens": 3593,
+              "total_tokens": 3991
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "Input field with placeholder 'What needs to be done?'",
+          "response": {
+            "elements": [
+              {
+                "id": "lpnid"
+              }
+            ]
+          },
+          "element": {
+            "id": "lpnid",
+            "indexId": 18,
+            "center": [
+              782,
+              162
+            ],
+            "rect": {
+              "left": 507,
+              "top": 130,
+              "width": 550,
+              "height": 65,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Input 'Learn Rust tomorrow' in the task box input and press the Enter key",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "Input 'Learn Rust tomorrow' in the task box input and press the Enter key @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Input",
+                "thought": "Input 'Learn Rust tomorrow' into the task box.",
+                "param": {
+                  "value": "Learn Rust tomorrow"
+                },
+                "locate": {
+                  "id": "lpnid",
+                  "prompt": "What needs to be done?"
+                }
+              },
+              {
+                "type": "KeyboardPress",
+                "thought": "Press the Enter key to add the new todo item.",
+                "param": {
+                  "value": "Enter"
+                }
+              }
+            ],
+            "log": "Input 'Learn Rust tomorrow' into the task box and press the Enter key.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Input\",\n      \"thought\": \"Input 'Learn Rust tomorrow' into the task box.\",\n      \"param\": {\n        \"value\": \"Learn Rust tomorrow\"\n      },\n      \"locate\": {\n        \"id\": \"lpnid\",\n        \"prompt\": \"What needs to be done?\"\n      }\n    },\n    {\n      \"type\": \"KeyboardPress\",\n      \"thought\": \"Press the Enter key to add the new todo item.\",\n      \"param\": {\n        \"value\": \"Enter\"\n      }\n    }\n  ],\n  \"log\": \"Input 'Learn Rust tomorrow' into the task box and press the Enter key.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 190,
+              "prompt_tokens": 4006,
+              "total_tokens": 4363
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "What needs to be done?",
+          "response": {
+            "elements": [
+              {
+                "id": "lpnid"
+              }
+            ]
+          },
+          "element": {
+            "id": "lpnid",
+            "indexId": 18,
+            "center": [
+              782,
+              162
+            ],
+            "rect": {
+              "left": 507,
+              "top": 130,
+              "width": 550,
+              "height": 65,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Input 'Learn AI the day after tomorrow' in the task box input and press the Enter key",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "Input 'Learn AI the day after tomorrow' in the task box input and press the Enter key @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Input",
+                "thought": "Input 'Learn AI the day after tomorrow' into the task box.",
+                "param": {
+                  "value": "Learn AI the day after tomorrow"
+                },
+                "locate": {
+                  "id": "lpnid",
+                  "prompt": "Input field with placeholder 'What needs to be done?'"
+                }
+              },
+              {
+                "type": "KeyboardPress",
+                "thought": "Press the Enter key to add the task.",
+                "param": {
+                  "value": "Enter"
+                }
+              }
+            ],
+            "log": "Input 'Learn AI the day after tomorrow' in the task box input and press the Enter key",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Input\",\n      \"thought\": \"Input 'Learn AI the day after tomorrow' into the task box.\",\n      \"param\": {\n        \"value\": \"Learn AI the day after tomorrow\"\n      },\n      \"locate\": {\n        \"id\": \"lpnid\",\n        \"prompt\": \"Input field with placeholder 'What needs to be done?'\"\n      }\n    },\n    {\n      \"type\": \"KeyboardPress\",\n      \"thought\": \"Press the Enter key to add the task.\",\n      \"param\": {\n        \"value\": \"Enter\"\n      }\n    }\n  ],\n  \"log\": \"Input 'Learn AI the day after tomorrow' in the task box input and press the Enter key\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 204,
+              "prompt_tokens": 4138,
+              "total_tokens": 4528
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "Input field with placeholder 'What needs to be done?'",
+          "response": {
+            "elements": [
+              {
+                "id": "lpnid"
+              }
+            ]
+          },
+          "element": {
+            "id": "lpnid",
+            "indexId": 18,
+            "center": [
+              782,
+              162
+            ],
+            "rect": {
+              "left": 507,
+              "top": 130,
+              "width": 550,
+              "height": 65,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Move the mouse to the second item in the task list and click the delete button on the right of the second task",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "Move the mouse to the second item in the task list and click the delete button on the right of the second task @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Hover",
+                "thought": "Move the mouse to the second item in the task list to make the delete button appear.",
+                "param": null,
+                "locate": {
+                  "id": "fhamh",
+                  "prompt": "Learn Rust tomorrow"
+                }
+              }
+            ],
+            "log": "Hover over the second todo item to reveal the delete button.",
+            "error": null,
+            "more_actions_needed_by_instruction": true,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Hover\",\n      \"thought\": \"Move the mouse to the second item in the task list to make the delete button appear.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"fhamh\",\n        \"prompt\": \"Learn Rust tomorrow\"\n      }\n    }\n  ],\n  \"log\": \"Hover over the second todo item to reveal the delete button.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": true\n}",
+            "usage": {
+              "completion_tokens": 130,
+              "prompt_tokens": 4273,
+              "total_tokens": 4686
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "Learn Rust tomorrow",
+          "response": {
+            "elements": [
+              {
+                "id": "fhamh"
+              }
+            ]
+          },
+          "element": {
+            "id": "fhamh",
+            "indexId": 24,
+            "center": [
+              679,
+              284
+            ],
+            "rect": {
+              "left": 567,
+              "top": 271,
+              "width": 224,
+              "height": 27,
+              "zoom": 1
+            }
+          }
+        },
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "Move the mouse to the second item in the task list and click the delete button on the right of the second task @ - Hover over the second todo item to reveal the delete button.",
+          "response": {
+            "actions": [
+              {
+                "type": "Tap",
+                "thought": "Click the delete button on the right of the second task.",
+                "param": null,
+                "locate": {
+                  "id": "gpcee",
+                  "prompt": "delete button"
+                }
+              }
+            ],
+            "log": "Click the delete button on the right of the second task.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Tap\",\n      \"thought\": \"Click the delete button on the right of the second task.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"gpcee\",\n        \"prompt\": \"delete button\"\n      }\n    }\n  ],\n  \"log\": \"Click the delete button on the right of the second task.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 122,
+              "prompt_tokens": 4383,
+              "total_tokens": 4620
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "delete button",
+          "response": {
+            "elements": [
+              {
+                "id": "gpcee"
+              }
+            ]
+          },
+          "element": {
+            "id": "gpcee",
+            "indexId": 25,
+            "center": [
+              1027,
+              285
+            ],
+            "rect": {
+              "left": 1007,
+              "top": 265,
+              "width": 40,
+              "height": 40,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Tap - the check button on the left of the second task",
+      "tasks": [
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "the check button on the left of the second task",
+          "response": {
+            "elements": [
+              {
+                "id": "gfhcf"
+              }
+            ]
+          },
+          "element": {
+            "id": "gfhcf",
+            "indexId": 23,
+            "center": [
+              527,
+              285
+            ],
+            "rect": {
+              "left": 507,
+              "top": 265,
+              "width": 40,
+              "height": 40,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Tap - the 'completed' status button below the task list",
+      "tasks": [
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "the 'completed' status button below the task list",
+          "response": {
+            "elements": [
+              {
+                "id": "ijmdo"
+              }
+            ]
+          },
+          "element": {
+            "id": "ijmdo",
+            "indexId": 28,
+            "center": [
+              832,
+              334
+            ],
+            "rect": {
+              "left": 796,
+              "top": 326,
+              "width": 73,
+              "height": 17,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Test Automation Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .last-updated {
+      font-size: 12px;
+      color: #666;
+      font-style: italic;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .auto-refresh-indicator {
+      display: none;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #4bc0c0;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { opacity: 0.3; }
+      50% { opacity: 1; }
+      100% { opacity: 0.3; }
+    }
+    
+    .refresh-btn {
+      background-color: #4bc0c0;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 16px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .refresh-btn:hover {
+      background-color: #3aa7a7;
+    }
+    
+    .loading {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 600;
+    }
+    
+    .time-filter {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .time-btn {
+      background-color: #e9ecef;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 16px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    
+    .time-btn.active {
+      background-color: #0d6efd;
+      color: white;
+    }
+    
+    .summary-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      padding: 16px;
+      text-align: center;
+    }
+    
+    .card-title {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: #555;
+    }
+    
+    .card-value {
+      font-size: 28px;
+      font-weight: bold;
+    }
+    
+    .card-passed .card-value { color: #4bc0c0; }
+    .card-failed .card-value { color: #ff6384; }
+    .card-rate .card-value { color: #36a2eb; }
+    
+    .section {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+    
+    .section-title {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 16px;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .charts-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    
+    .chart-wrapper {
+      height: 300px;
+      position: relative;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #e9ecef;
+    }
+    
+    th {
+      background-color: #f8f9fa;
+      font-weight: 500;
+    }
+    
+    .status-pass, .status-passed {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+      display: inline-block;
+    }
+    
+    .status-fail, .status-failed {
+      background-color: #f8d7da;
+      color: #721c24;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+      display: inline-block;
+    }
+    
+    .status-skip, .status-skipped {
+      background-color: #fff3cd;
+      color: #856404;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+      display: inline-block;
+    }
+    
+    .flaky-badge {
+      display: inline-block;
+      background-color: #ff9f40;
+      color: white;
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-size: 12px;
+    }
+    
+    .stability-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    
+    .stability-card {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 16px;
+    }
+    
+    .stability-title {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: #555;
+    }
+    
+    .flaky-test {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #e9ecef;
+    }
+    
+    .flaky-test:last-child {
+      border-bottom: none;
+    }
+    
+    .flaky-name {
+      font-weight: 500;
+    }
+    
+    .flaky-rate {
+      color: #ff9f40;
+    }
+    
+    .retry-chart {
+      height: 180px;
+    }
+    
+    /* Add styling for test links */
+    .test-link {
+      color: #0d6efd;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .test-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Test Automation Dashboard</h1>
+    <div class="header-right">
+      <div class="last-updated" id="last-updated">
+        <span>Last updated: Never</span>
+        <div class="auto-refresh-indicator" id="auto-refresh-indicator" title="Auto-refreshing"></div>
+      </div>
+      <div class="last-updated">
+        <span id="report-timestamp">Report: Not loaded</span>
+      </div>
+      <div class="time-filter">
+        <button class="time-btn active">Today</button>
+        <button class="time-btn">Last 7 Days</button>
+        <button class="time-btn">Last 30 Days</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Summary Cards Section -->
+  <div class="summary-cards">
+    <div class="card">
+      <div class="card-title">Total Tests</div>
+      <div class="card-value" id="total-tests">120</div>
+    </div>
+    <div class="card card-passed">
+      <div class="card-title">Passed</div>
+      <div class="card-value" id="passed-tests">98</div>
+    </div>
+    <div class="card card-failed">
+      <div class="card-title">Failed</div>
+      <div class="card-value" id="failed-tests">22</div>
+    </div>
+    <div class="card card-rate">
+      <div class="card-title">Pass Rate</div>
+      <div class="card-value" id="pass-rate">81.7%</div>
+    </div>
+  </div>
+  
+  <!-- Charts Section -->
+  <div class="section">
+    <div class="section-title">📈 Charts</div>
+    <div class="charts-container">
+      <div class="chart-wrapper">
+        <canvas id="distribution-chart"></canvas>
+      </div>
+      <div class="chart-wrapper">
+        <canvas id="trend-chart"></canvas>
+      </div>
+      <div class="chart-wrapper">
+        <canvas id="coverage-chart"></canvas>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Table View Section -->
+  <div class="section">
+    <div class="section-title">📋 Table View</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Test Name</th>
+          <th>Status</th>
+          <th>Duration</th>
+          <th>Flaky</th>
+          <th>Retry Info</th>
+        </tr>
+      </thead>
+      <tbody id="test-results">
+        <!-- Sample data, will be replaced with actual data -->
+        <tr>
+          <td><a href="test-results/test-report-2025-06-04T08-54-38-050Z.html#Freight Charge creation with Shipping term Door to Door" class="test-link">Freight Charge creation with Shipping term Door to Door</a></td>
+          <td class="status-passed">PASSED</td>
+          <td>2.3s</td>
+          <td><span class="flaky-badge">Flaky</span></td>
+          <td>Passed on retry 1/2</td>
+        </tr>
+        <tr>
+          <td><a href="test-results/test-report-2025-06-04T08-54-38-050Z.html#Create Unsold Order" class="test-link">Create Unsold Order</a></td>
+          <td class="status-failed">FAILED</td>
+          <td>3.5s</td>
+          <td></td>
+          <td>Failed all retries</td>
+        </tr>
+        <tr>
+          <td><a href="test-results/test-report-2025-06-04T08-54-38-050Z.html#Product Search" class="test-link">Product Search</a></td>
+          <td class="status-passed">PASSED</td>
+          <td>1.8s</td>
+          <td></td>
+          <td>No retries</td>
+        </tr>
+        <tr>
+          <td><a href="test-results/test-report-2025-06-04T08-54-38-050Z.html#Checkout Process" class="test-link">Checkout Process</a></td>
+          <td class="status-skipped">SKIPPED</td>
+          <td>0.0s</td>
+          <td></td>
+          <td>Dependency failed</td>
+        </tr>
+        <tr>
+          <td><a href="test-results/test-report-2025-06-04T08-54-38-050Z.html#Payment Gateway" class="test-link">Payment Gateway</a></td>
+          <td class="status-passed">PASSED</td>
+          <td>4.2s</td>
+          <td><span class="flaky-badge">Flaky</span></td>
+          <td>Passed on retry 2/2</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- Stability Insights Section -->
+  <div class="section">
+    <div class="section-title">🔄 Stability Insights</div>
+    <div class="stability-grid">
+      <div class="stability-card">
+        <div class="stability-title">Top 5 Flaky Tests</div>
+        <div class="flaky-test">
+          <div class="flaky-name">Payment Gateway</div>
+          <div class="flaky-rate">Flaky rate: 35%</div>
+        </div>
+        <div class="flaky-test">
+          <div class="flaky-name">Login Authentication</div>
+          <div class="flaky-rate">Flaky rate: 28%</div>
+        </div>
+        <div class="flaky-test">
+          <div class="flaky-name">Cart Update</div>
+          <div class="flaky-rate">Flaky rate: 22%</div>
+        </div>
+        <div class="flaky-test">
+          <div class="flaky-name">User Registration</div>
+          <div class="flaky-rate">Flaky rate: 15%</div>
+        </div>
+        <div class="flaky-test">
+          <div class="flaky-name">Order History</div>
+          <div class="flaky-rate">Flaky rate: 12%</div>
+        </div>
+      </div>
+      <div class="stability-card">
+        <div class="stability-title">Retry Success Rate</div>
+        <div class="retry-chart">
+          <canvas id="retry-chart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Sample data - in a real implementation, this would be loaded from test-results.json
+    const testData = {
+      summary: {
+        total: 120,
+        passed: 98,
+        failed: 22,
+        skipped: 0,
+        passRate: 81.7
+      },
+      trends: {
+        dates: ['Jun 1', 'Jun 2', 'Jun 3', 'Jun 4', 'Jun 5', 'Jun 6', 'Jun 7'],
+        passed: [85, 90, 88, 92, 95, 98, 98],
+        failed: [15, 10, 12, 8, 5, 2, 22],
+        total: [100, 100, 100, 100, 100, 100, 120]
+      },
+      features: {
+        names: ['Authentication', 'User Profile', 'Search', 'Cart', 'Checkout', 'Payment', 'Orders'],
+        coverage: [95, 85, 90, 75, 80, 70, 60]
+      },
+      retryStats: {
+        success: 65,
+        failure: 35
+      },
+      testResults: [
+        {
+          name: "Freight Charge creation with Shipping term Door to Door",
+          status: "PASSED",
+          duration: "2.3s",
+          flaky: true,
+          retryInfo: "Passed on retry 1/2",
+          reportUrl: "test-results/test-report-2025-06-04T08-54-38-050Z.html#Freight Charge creation with Shipping term Door to Door"
+        },
+        {
+          name: "Create Unsold Order",
+          status: "FAILED",
+          duration: "3.5s",
+          flaky: false,
+          retryInfo: "Failed all retries",
+          reportUrl: "test-results/test-report-2025-06-04T08-54-38-050Z.html#Create Unsold Order"
+        },
+        {
+          name: "Product Search",
+          status: "PASSED",
+          duration: "1.8s",
+          flaky: false,
+          retryInfo: "No retries",
+          reportUrl: "test-results/test-report-2025-06-04T08-54-38-050Z.html#Product Search"
+        },
+        {
+          name: "Checkout Process",
+          status: "SKIPPED",
+          duration: "0.0s",
+          flaky: false,
+          retryInfo: "Dependency failed",
+          reportUrl: "test-results/test-report-2025-06-04T08-54-38-050Z.html#Checkout Process"
+        },
+        {
+          name: "Payment Gateway",
+          status: "PASSED",
+          duration: "4.2s",
+          flaky: true,
+          retryInfo: "Passed on retry 2/2",
+          reportUrl: "test-results/test-report-2025-06-04T08-54-38-050Z.html#Payment Gateway"
+        }
+      ]
+    };
+
+    // Initialize charts when the DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Update summary cards
+      document.getElementById('total-tests').textContent = testData.summary.total;
+      document.getElementById('passed-tests').textContent = testData.summary.passed;
+      document.getElementById('failed-tests').textContent = testData.summary.failed;
+      document.getElementById('pass-rate').textContent = testData.summary.passRate + '%';
+      
+      // Create distribution chart (pie chart)
+      const distributionCtx = document.getElementById('distribution-chart').getContext('2d');
+      new Chart(distributionCtx, {
+        type: 'pie',
+        data: {
+          labels: ['Passed', 'Failed', 'Skipped'],
+          datasets: [{
+            data: [testData.summary.passed, testData.summary.failed, testData.summary.skipped],
+            backgroundColor: ['#4bc0c0', '#ff6384', '#ffcd56'],
+            borderWidth: 0
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: {
+              display: true,
+              text: 'Test Result Distribution',
+              font: {
+                size: 16
+              }
+            },
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }
+      });
+      
+      // Create trend chart (line chart)
+      const trendCtx = document.getElementById('trend-chart').getContext('2d');
+      new Chart(trendCtx, {
+        type: 'line',
+        data: {
+          labels: testData.trends.dates,
+          datasets: [
+            {
+              label: 'Passed',
+              data: testData.trends.passed,
+              borderColor: '#4bc0c0',
+              backgroundColor: 'rgba(75, 192, 192, 0.1)',
+              fill: true,
+              tension: 0.4
+            },
+            {
+              label: 'Failed',
+              data: testData.trends.failed,
+              borderColor: '#ff6384',
+              backgroundColor: 'rgba(255, 99, 132, 0.1)',
+              fill: true,
+              tension: 0.4
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: {
+              display: true,
+              text: 'Daily Test Trends',
+              font: {
+                size: 16
+              }
+            },
+            legend: {
+              position: 'bottom'
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Number of Tests'
+              }
+            }
+          }
+        }
+      });
+      
+      // Create coverage chart (horizontal bar chart)
+      const coverageCtx = document.getElementById('coverage-chart').getContext('2d');
+      new Chart(coverageCtx, {
+        type: 'bar',
+        data: {
+          labels: testData.features.names,
+          datasets: [{
+            label: 'Coverage %',
+            data: testData.features.coverage,
+            backgroundColor: '#36a2eb',
+            barPercentage: 0.6,
+            categoryPercentage: 0.8
+          }]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: {
+              display: true,
+              text: 'Feature Coverage',
+              font: {
+                size: 16
+              }
+            },
+            legend: {
+              display: false
+            }
+          },
+          scales: {
+            x: {
+              beginAtZero: true,
+              max: 100,
+              title: {
+                display: true,
+                text: 'Coverage %'
+              }
+            }
+          }
+        }
+      });
+      
+      // Create retry success chart (doughnut chart)
+      const retryCtx = document.getElementById('retry-chart').getContext('2d');
+      new Chart(retryCtx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Success', 'Failure'],
+          datasets: [{
+            data: [testData.retryStats.success, testData.retryStats.failure],
+            backgroundColor: ['#4bc0c0', '#ff6384'],
+            borderWidth: 0
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '70%',
+          plugins: {
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }
+      });
+      
+      // Add event listeners for time filter buttons
+      document.querySelectorAll('.time-btn').forEach(button => {
+        button.addEventListener('click', function() {
+          document.querySelector('.time-btn.active').classList.remove('active');
+          this.classList.add('active');
+          // In a real implementation, this would reload data for the selected time period
+        });
+      });
+
+      // Function to dynamically populate the test results table
+      function populateTestResultsTable() {
+        const tableBody = document.getElementById('test-results');
+        // Clear existing rows
+        tableBody.innerHTML = '';
+        
+        // Add rows for each test result
+        testData.testResults.forEach(test => {
+          const row = document.createElement('tr');
+          
+          // Test name with link to report
+          const nameCell = document.createElement('td');
+          const nameLink = document.createElement('a');
+          nameLink.href = test.reportUrl;
+          nameLink.className = 'test-link';
+          nameLink.textContent = test.name;
+          nameCell.appendChild(nameLink);
+          row.appendChild(nameCell);
+          
+          // Status with color indicator
+          const statusCell = document.createElement('td');
+          statusCell.className = `status-${test.status.toLowerCase()}`;
+          statusCell.textContent = test.status;
+          row.appendChild(statusCell);
+          
+          // Duration
+          const durationCell = document.createElement('td');
+          durationCell.textContent = test.duration;
+          row.appendChild(durationCell);
+          
+          // Flaky
+          const flakyCell = document.createElement('td');
+          if (test.flaky) {
+            const flakyBadge = document.createElement('span');
+            flakyBadge.className = 'flaky-badge';
+            flakyBadge.textContent = 'Flaky';
+            flakyCell.appendChild(flakyBadge);
+          }
+          row.appendChild(flakyCell);
+          
+          // Retry info
+          const retryCell = document.createElement('td');
+          retryCell.textContent = test.retryInfo;
+          row.appendChild(retryCell);
+          
+          // Add hover effect to row
+          row.style.transition = 'background-color 0.2s';
+          row.onmouseover = function() { this.style.backgroundColor = '#f8f9fa'; };
+          row.onmouseout = function() { this.style.backgroundColor = ''; };
+          
+          tableBody.appendChild(row);
+        });
+      }
+      
+      // Call the function to populate the table
+      // Uncomment this line to dynamically generate the table
+      // populateTestResultsTable();
+    });
+    
+    // Function to find the latest test report file using manifest
+      async function findLatestTestReport() {
+        try {
+          const manifestResponse = await fetch('/test-results/latest-report.json');
+          if (manifestResponse.ok) {
+            const manifestData = await manifestResponse.json();
+            if (manifestData && manifestData.latestReport) {
+              return manifestData.latestReport;
+            }
+          }
+        } catch (e) {}
+        const fallbackFile = 'test-report-2025-06-25T_21_56.json';
+        try {
+          const response = await fetch(`/test-results/${fallbackFile}`);
+          if (response.ok) {
+            return fallbackFile;
+          }
+        } catch (e) {}
+        return null;
+      }
+    
+    // Load data from the latest test report JSON file
+    function loadTestData() {
+      return new Promise((resolve, reject) => {
+        // Dynamically find the latest test report file
+        findLatestTestReport()
+          .then(latestFile => {
+            if (!latestFile) {
+              throw new Error('No test report files found');
+            }
+            return fetch(`/test-results/${latestFile}`);
+          })
+          .then(response => response.json())
+          .then(data => {
+            // Process the data and update the dashboard
+            console.log('Test data loaded:', data);
+            
+            // Update the report timestamp display
+            const reportTimestamp = data.timestamp;
+            document.getElementById('report-timestamp').textContent = 'Report: ' + reportTimestamp;
+            
+            const latestSlug = latestFile.replace(/^test-report-/, '').replace(/\.json$/, '');
+            const runUrl = `/midscene_run/report/${latestSlug}/test-results.json`;
+            fetch(runUrl).then(r => r.ok ? r.json() : null).then(runData => {
+              const durationMap = {};
+              function collect(node) {
+                if (!node) return;
+                const specs = node.specs || [];
+                specs.forEach(spec => {
+                  let ms = null;
+                  const testsArr = spec.tests || [];
+                  testsArr.forEach(t => {
+                    const resArr = t.results || [];
+                    resArr.forEach(res => {
+                      if (typeof res.duration === 'number') ms = res.duration;
+                    });
+                  });
+                  if (ms != null) durationMap[spec.title] = ms;
+                });
+                const suites = node.suites || [];
+                suites.forEach(s => collect(s));
+              }
+              if (runData) collect(runData);
+              function formatDuration(ms) { return (ms / 1000).toFixed(1) + 's'; }
+              function normalize(s) { return (s || '').toLowerCase().replace(/[^a-z0-9]+/g, ''); }
+              const titleEntries = Object.entries(durationMap).map(([k, v]) => [normalize(k), v]);
+              const mappedResults = data.testResults.map(test => {
+                const nameNorm = normalize(test.name);
+                let durMs = undefined;
+                for (const [normTitle, ms] of titleEntries) {
+                  if (nameNorm && (nameNorm.includes(normTitle) || normTitle.includes(nameNorm))) {
+                    durMs = ms;
+                    break;
+                  }
+                }
+                const pathParts = (test.path || '').split('/');
+                const fileName = pathParts[pathParts.length - 1] || '';
+                const testId = fileName.replace('.spec.ts', '');
+                return {
+                  name: test.name,
+                  status: test.result,
+                  duration: typeof durMs === 'number' ? formatDuration(durMs) : 'N/A',
+                  flaky: false,
+                  retryInfo: 'No retries',
+                  reportUrl: `/midscene_run/report/${latestSlug}/index.html#${encodeURIComponent(testId)}`
+                };
+              });
+              testData.testResults = mappedResults;
+              testData.summary.total = data.totalTests;
+              testData.summary.passed = data.passedTests;
+              testData.summary.failed = data.failedTests;
+              testData.summary.passRate = ((data.passedTests / data.totalTests) * 100).toFixed(1);
+              document.getElementById('total-tests').textContent = testData.summary.total;
+              document.getElementById('passed-tests').textContent = testData.summary.passed;
+              document.getElementById('failed-tests').textContent = testData.summary.failed;
+              document.getElementById('pass-rate').textContent = testData.summary.passRate + '%';
+              populateTestResultsTable();
+              const now = new Date();
+              const formattedDate = now.toLocaleDateString() + ' ' + now.toLocaleTimeString();
+              const lastUpdatedElement = document.getElementById('last-updated');
+              lastUpdatedElement.querySelector('span').textContent = 'Last updated: ' + formattedDate;
+              resolve();
+            });
+          })
+          .catch(error => {
+            console.error('Error loading test data:', error);
+            reject(error);
+          });
+      });
+    }
+    
+    // Load actual data and set up auto-refresh
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load the data immediately
+      loadTestData();
+      
+      // Set up auto-refresh every 30 seconds
+      const AUTO_REFRESH_INTERVAL = 30000; // 30 seconds
+      const autoRefreshIndicator = document.getElementById('auto-refresh-indicator');
+      
+      setInterval(() => {
+        console.log('Auto-refresh triggered');
+        
+        // Show the auto-refresh indicator
+        autoRefreshIndicator.style.display = 'block';
+        
+        loadTestData()
+          .then(() => {
+            console.log('Auto-refresh completed successfully');
+            // Hide the indicator after a short delay to make it visible
+            setTimeout(() => {
+              autoRefreshIndicator.style.display = 'none';
+            }, 1000);
+          })
+          .catch(error => {
+            console.error('Auto-refresh failed:', error);
+            autoRefreshIndicator.style.display = 'none';
+          });
+      }, AUTO_REFRESH_INTERVAL);
+      
+      // Add a refresh button to the header
+      const headerRight = document.querySelector('.header-right');
+      const refreshButton = document.createElement('button');
+      refreshButton.innerHTML = '<span>🔄 Refresh</span>';
+      refreshButton.className = 'refresh-btn';
+      refreshButton.addEventListener('click', function() {
+        console.log('Manual refresh triggered');
+        
+        // Show loading indicator on button
+        const loadingIndicator = document.createElement('span');
+        loadingIndicator.className = 'loading';
+        refreshButton.innerHTML = '';
+        refreshButton.appendChild(loadingIndicator);
+        refreshButton.appendChild(document.createTextNode(' Loading...'));
+        refreshButton.disabled = true;
+        
+        // Show the auto-refresh indicator
+        autoRefreshIndicator.style.display = 'block';
+        
+        // Load the data
+        loadTestData()
+          .then(() => {
+            // Restore button state
+            refreshButton.innerHTML = '<span>🔄 Refresh</span>';
+            refreshButton.disabled = false;
+            
+            // Hide the indicator after a short delay
+            setTimeout(() => {
+              autoRefreshIndicator.style.display = 'none';
+            }, 1000);
+          })
+          .catch(() => {
+            // Restore button state even on error
+            refreshButton.innerHTML = '<span>🔄 Refresh</span>';
+            refreshButton.disabled = false;
+            autoRefreshIndicator.style.display = 'none';
+          });
+      });
+      headerRight.insertBefore(refreshButton, headerRight.firstChild);
+    });
+  </script>
+</body>
+</html>

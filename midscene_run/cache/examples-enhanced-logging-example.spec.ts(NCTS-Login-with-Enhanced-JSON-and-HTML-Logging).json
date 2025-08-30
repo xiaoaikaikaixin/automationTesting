@@ -1,0 +1,356 @@
+{
+  "pkgName": "midscene-unknown-package-name",
+  "pkgVersion": "0.0.0",
+  "cacheId": "examples-enhanced-logging-example.spec.ts(NCTS-Login-with-Enhanced-JSON-and-HTML-Logging)",
+  "aiTasks": [
+    {
+      "prompt": "Input - User ID field",
+      "tasks": [
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Login.aspx",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "User ID field",
+          "response": {
+            "elements": [
+              {
+                "id": "npbbf"
+              }
+            ]
+          },
+          "element": {
+            "id": "npbbf",
+            "indexId": 8,
+            "center": [
+              913,
+              298
+            ],
+            "rect": {
+              "left": 828,
+              "top": 288,
+              "width": 170,
+              "height": 20,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Input - Password field",
+      "tasks": [
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Login.aspx",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "Password field",
+          "response": {
+            "elements": [
+              {
+                "id": "fkkah"
+              }
+            ]
+          },
+          "element": {
+            "id": "fkkah",
+            "indexId": 10,
+            "center": [
+              913,
+              324
+            ],
+            "rect": {
+              "left": 828,
+              "top": 315,
+              "width": 170,
+              "height": 19,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Tap - Login button",
+      "tasks": [
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Login.aspx",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "Login button",
+          "response": {
+            "elements": [
+              {
+                "id": "kfblh"
+              }
+            ]
+          },
+          "element": {
+            "id": "kfblh",
+            "indexId": 11,
+            "center": [
+              852,
+              379
+            ],
+            "rect": {
+              "left": 706,
+              "top": 354,
+              "width": 292,
+              "height": 50,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Tap - Contrat menu",
+      "tasks": [
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Default.aspx",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "Contrat menu",
+          "response": {
+            "elements": [
+              {
+                "id": "hbdkh"
+              }
+            ]
+          },
+          "element": {
+            "id": "hbdkh",
+            "indexId": 5,
+            "center": [
+              51,
+              38
+            ],
+            "rect": {
+              "left": 26,
+              "top": 31,
+              "width": 51,
+              "height": 15,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Tap - Trading Slip - New record",
+      "tasks": [
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Default.aspx",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "Trading Slip - New record",
+          "response": {
+            "elements": [
+              {
+                "id": "faaib"
+              }
+            ]
+          },
+          "element": {
+            "id": "faaib",
+            "indexId": 7,
+            "center": [
+              70,
+              81
+            ],
+            "rect": {
+              "left": 20,
+              "top": 74,
+              "width": 101,
+              "height": 15,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Tap - Unsold Order checkbox under Special Order Type",
+      "tasks": [
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "Unsold Order checkbox under Special Order Type",
+          "response": {
+            "elements": [
+              {
+                "id": "ilepe"
+              }
+            ]
+          },
+          "element": {
+            "id": "ilepe",
+            "indexId": 31,
+            "center": [
+              32,
+              276
+            ],
+            "rect": {
+              "left": 26,
+              "top": 270,
+              "width": 13,
+              "height": 13,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Tap - Division dropdown menu",
+      "tasks": [
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "Division dropdown menu",
+          "response": {
+            "elements": [
+              {
+                "id": "ncokb"
+              }
+            ]
+          },
+          "element": {
+            "id": "ncokb",
+            "indexId": 38,
+            "center": [
+              191,
+              363
+            ],
+            "rect": {
+              "left": 21,
+              "top": 351,
+              "width": 340,
+              "height": 24,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Tap - Fatty Alcohol",
+      "tasks": [
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "Fatty Alcohol",
+          "response": {
+            "elements": [
+              {
+                "id": "kcpob"
+              }
+            ]
+          },
+          "element": {
+            "id": "kcpob",
+            "indexId": 71,
+            "center": [
+              66,
+              571
+            ],
+            "rect": {
+              "left": 28,
+              "top": 564,
+              "width": 77,
+              "height": 15,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Wait for 3 seconds",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/TradingSlip/TradingSlipEntryMain.aspx?Type=TRADING_SLIP",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "Wait for 3 seconds @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Sleep",
+                "thought": "Wait for 3 seconds as requested by the user.",
+                "param": {
+                  "timeMs": 3000
+                }
+              }
+            ],
+            "log": "Waiting for 3 seconds.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Sleep\",\n      \"thought\": \"Wait for 3 seconds as requested by the user.\",\n      \"param\": {\n        \"timeMs\": 3000\n      }\n    }\n  ],\n  \"log\": \"Waiting for 3 seconds.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 101,
+              "prompt_tokens": 7160,
+              "total_tokens": 7329
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

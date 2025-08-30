@@ -1,0 +1,124 @@
+{
+  "pkgName": "midscene-unknown-package-name",
+  "pkgVersion": "0.0.0",
+  "cacheId": "unsold-order-creation.spec.ts(Create-Unsold-Order-workflow)",
+  "aiTasks": [
+    {
+      "prompt": "Input - icof-441",
+      "tasks": [
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Login.aspx",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "icof-441",
+          "response": {
+            "elements": [
+              {
+                "id": "jmghh"
+              }
+            ]
+          },
+          "element": {
+            "id": "jmghh",
+            "indexId": 0,
+            "center": [
+              347,
+              122
+            ],
+            "rect": {
+              "left": 249,
+              "top": 33,
+              "width": 196,
+              "height": 178,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Input - icoficof",
+      "tasks": [
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Login.aspx",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "icoficof",
+          "response": {
+            "elements": [
+              {
+                "id": "kabim"
+              }
+            ]
+          },
+          "element": {
+            "id": "kabim",
+            "indexId": 0,
+            "center": [
+              347,
+              121
+            ],
+            "rect": {
+              "left": 249,
+              "top": 32,
+              "width": 196,
+              "height": 178,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Tap - Login button",
+      "tasks": [
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Login.aspx",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "Login button",
+          "response": {
+            "elements": [
+              {
+                "id": "eghlp"
+              }
+            ]
+          },
+          "element": {
+            "id": "eghlp",
+            "indexId": 11,
+            "center": [
+              852,
+              378
+            ],
+            "rect": {
+              "left": 706,
+              "top": 353,
+              "width": 292,
+              "height": 50,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

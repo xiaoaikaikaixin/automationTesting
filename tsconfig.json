@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noUnusedParameters": false,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "lib": ["DOM", "ESNext"],
+    "moduleResolution": "node",
+    "useUnknownInCatchVariables": false,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "target": "ES2017",
+    "resolveJsonModule": true,
+    "rootDir": "./",
+    "skipLibCheck": true,
+    "strict": true
+  },
+  "exclude": [ "node_modules"],
+  "include": [
+    "src",
+    "e2e",
+    "e2e/example/faq",
+    "./playwright.config.ts",
+    "./playwright1.config.ts",
+    "./vitest.config",
+    "fixture.ts"
+  ]
+}

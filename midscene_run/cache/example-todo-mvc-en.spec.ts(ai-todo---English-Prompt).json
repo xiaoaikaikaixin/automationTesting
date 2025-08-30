@@ -1,0 +1,298 @@
+{
+  "pkgName": "midscene-unknown-package-name",
+  "pkgVersion": "0.0.0",
+  "cacheId": "example-todo-mvc-en.spec.ts(ai-todo---English-Prompt)",
+  "aiTasks": [
+    {
+      "prompt": "Input 'Learn JS today' in the task box input and press the Enter key",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "Input 'Learn JS today' in the task box input and press the Enter key @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Input",
+                "thought": "Input 'Learn JS today' into the task box input field.",
+                "param": {
+                  "value": "Learn JS today"
+                },
+                "locate": {
+                  "id": "mglej",
+                  "prompt": "Input field with placeholder 'What needs to be done?'"
+                }
+              },
+              {
+                "type": "KeyboardPress",
+                "thought": "Press the Enter key to submit the task.",
+                "param": {
+                  "value": "Enter"
+                }
+              }
+            ],
+            "log": "Input 'Learn JS today' in the task box input and press the Enter key.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Input\",\n      \"thought\": \"Input 'Learn JS today' into the task box input field.\",\n      \"param\": {\n        \"value\": \"Learn JS today\"\n      },\n      \"locate\": {\n        \"id\": \"mglej\",\n        \"prompt\": \"Input field with placeholder 'What needs to be done?'\"\n      }\n    },\n    {\n      \"type\": \"KeyboardPress\",\n      \"thought\": \"Press the Enter key to submit the task.\",\n      \"param\": {\n        \"value\": \"Enter\"\n      }\n    }\n  ],\n  \"log\": \"Input 'Learn JS today' in the task box input and press the Enter key.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 197,
+              "prompt_tokens": 3593,
+              "total_tokens": 4013
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "Input field with placeholder 'What needs to be done?'",
+          "response": {
+            "elements": [
+              {
+                "id": "mglej"
+              }
+            ]
+          },
+          "element": {
+            "id": "mglej",
+            "indexId": 18,
+            "center": [
+              783,
+              162
+            ],
+            "rect": {
+              "left": 508,
+              "top": 130,
+              "width": 550,
+              "height": 65,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Input 'Learn Rust tomorrow' in the task box input and press the Enter key",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "Input 'Learn Rust tomorrow' in the task box input and press the Enter key @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Input",
+                "thought": "Input 'Learn Rust tomorrow' into the task box.",
+                "param": {
+                  "value": "Learn Rust tomorrow"
+                },
+                "locate": {
+                  "id": "mglej",
+                  "prompt": "What needs to be done?"
+                }
+              },
+              {
+                "type": "KeyboardPress",
+                "thought": "Press the Enter key to add the task.",
+                "param": {
+                  "value": "Enter"
+                }
+              }
+            ],
+            "log": "Input 'Learn Rust tomorrow' in the task box input and press the Enter key.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Input\",\n      \"thought\": \"Input 'Learn Rust tomorrow' into the task box.\",\n      \"param\": {\n        \"value\": \"Learn Rust tomorrow\"\n      },\n      \"locate\": {\n        \"id\": \"mglej\",\n        \"prompt\": \"What needs to be done?\"\n      }\n    },\n    {\n      \"type\": \"KeyboardPress\",\n      \"thought\": \"Press the Enter key to add the task.\",\n      \"param\": {\n        \"value\": \"Enter\"\n      }\n    }\n  ],\n  \"log\": \"Input 'Learn Rust tomorrow' in the task box input and press the Enter key.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 189,
+              "prompt_tokens": 4008,
+              "prompt_tokens_details": {
+                "cached_tokens": 731
+              },
+              "total_tokens": 4320
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "What needs to be done?",
+          "response": {
+            "elements": [
+              {
+                "id": "mglej"
+              }
+            ]
+          },
+          "element": {
+            "id": "mglej",
+            "indexId": 18,
+            "center": [
+              783,
+              162
+            ],
+            "rect": {
+              "left": 508,
+              "top": 130,
+              "width": 550,
+              "height": 65,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Input 'Learn AI the day after tomorrow' in the task box input and press the Enter key",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "Input 'Learn AI the day after tomorrow' in the task box input and press the Enter key @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Input",
+                "thought": "Input 'Learn AI the day after tomorrow' into the task box.",
+                "param": {
+                  "value": "Learn AI the day after tomorrow"
+                },
+                "locate": {
+                  "id": "mglej",
+                  "prompt": "What needs to be done?"
+                }
+              },
+              {
+                "type": "KeyboardPress",
+                "thought": "Press the Enter key to add the task.",
+                "param": {
+                  "value": "Enter"
+                }
+              }
+            ],
+            "log": "Input 'Learn AI the day after tomorrow' in the task box input and press the Enter key",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Input\",\n      \"thought\": \"Input 'Learn AI the day after tomorrow' into the task box.\",\n      \"param\": {\n        \"value\": \"Learn AI the day after tomorrow\"\n      },\n      \"locate\": {\n        \"id\": \"mglej\",\n        \"prompt\": \"What needs to be done?\"\n      }\n    },\n    {\n      \"type\": \"KeyboardPress\",\n      \"thought\": \"Press the Enter key to add the task.\",\n      \"param\": {\n        \"value\": \"Enter\"\n      }\n    }\n  ],\n  \"log\": \"Input 'Learn AI the day after tomorrow' in the task box input and press the Enter key\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 198,
+              "prompt_tokens": 4137,
+              "total_tokens": 4454
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "What needs to be done?",
+          "response": {
+            "elements": [
+              {
+                "id": "mglej"
+              }
+            ]
+          },
+          "element": {
+            "id": "mglej",
+            "indexId": 18,
+            "center": [
+              783,
+              162
+            ],
+            "rect": {
+              "left": 508,
+              "top": 130,
+              "width": 550,
+              "height": 65,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Move the mouse to the second item in the task list and click the delete button on the right of the second task",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "Move the mouse to the second item in the task list and click the delete button on the right of the second task @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Hover",
+                "thought": "Move the mouse to the second item in the task list ('Learn Rust tomorrow') to make the delete button visible.",
+                "param": null,
+                "locate": {
+                  "id": "hblln",
+                  "prompt": "Learn Rust tomorrow"
+                }
+              }
+            ],
+            "log": "Hover over the second item in the task list ('Learn Rust tomorrow') to make the delete button visible.",
+            "error": null,
+            "more_actions_needed_by_instruction": true,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Hover\",\n      \"thought\": \"Move the mouse to the second item in the task list ('Learn Rust tomorrow') to make the delete button visible.\",\n      \"param\": null,\n      \"locate\": {\n        \"id\": \"hblln\",\n        \"prompt\": \"Learn Rust tomorrow\"\n      }\n    }\n  ],\n  \"log\": \"Hover over the second item in the task list ('Learn Rust tomorrow') to make the delete button visible.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": true\n}",
+            "usage": {
+              "completion_tokens": 144,
+              "prompt_tokens": 4272,
+              "prompt_tokens_details": {
+                "cached_tokens": 743
+              },
+              "total_tokens": 4710
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

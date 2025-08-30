@@ -1,0 +1,196 @@
+{
+  "pkgName": "midscene-unknown-package-name",
+  "pkgVersion": "0.0.0",
+  "cacheId": "todo-mvc-en1.spec.ts(ai-create-Unsold-Order)",
+  "aiTasks": [
+    {
+      "prompt": "Input \"iof-441\" in the User ID field",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Login.aspx",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "Input \"iof-441\" in the User ID field @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Input",
+                "thought": "Input \"iof-441\" in the User ID field.",
+                "param": {
+                  "value": "iof-441"
+                },
+                "locate": {
+                  "id": "npbbf",
+                  "prompt": "User ID input field"
+                }
+              }
+            ],
+            "log": "Input \"iof-441\" in the User ID field.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Input\",\n      \"thought\": \"Input \\\"iof-441\\\" in the User ID field.\",\n      \"param\": {\n        \"value\": \"iof-441\"\n      },\n      \"locate\": {\n        \"id\": \"npbbf\",\n        \"prompt\": \"User ID input field\"\n      }\n    }\n  ],\n  \"log\": \"Input \\\"iof-441\\\" in the User ID field.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 146,
+              "prompt_tokens": 3104,
+              "total_tokens": 3367
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Login.aspx",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "User ID input field",
+          "response": {
+            "elements": [
+              {
+                "id": "npbbf"
+              }
+            ]
+          },
+          "element": {
+            "id": "npbbf",
+            "indexId": 8,
+            "center": [
+              913,
+              298
+            ],
+            "rect": {
+              "left": 828,
+              "top": 288,
+              "width": 170,
+              "height": 20,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Input \"icoficof\" in Password field",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Login.aspx",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "Input \"icoficof\" in Password field @ ",
+          "response": {
+            "actions": [
+              {
+                "type": "Input",
+                "thought": "Input \"icoficof\" into the password field.",
+                "param": {
+                  "value": "icoficof"
+                },
+                "locate": {
+                  "id": "fkkah",
+                  "prompt": "Password input field"
+                }
+              }
+            ],
+            "log": "Input \"icoficof\" into the password field.",
+            "error": null,
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"type\": \"Input\",\n      \"thought\": \"Input \\\"icoficof\\\" into the password field.\",\n      \"param\": {\n        \"value\": \"icoficof\"\n      },\n      \"locate\": {\n        \"id\": \"fkkah\",\n        \"prompt\": \"Password input field\"\n      }\n    }\n  ],\n  \"log\": \"Input \\\"icoficof\\\" into the password field.\",\n  \"error\": null,\n  \"more_actions_needed_by_instruction\": false\n}",
+            "usage": {
+              "completion_tokens": 137,
+              "prompt_tokens": 3109,
+              "total_tokens": 3433
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Login.aspx",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "Password input field",
+          "response": {
+            "elements": [
+              {
+                "id": "fkkah"
+              }
+            ]
+          },
+          "element": {
+            "id": "fkkah",
+            "indexId": 10,
+            "center": [
+              913,
+              324
+            ],
+            "rect": {
+              "left": 828,
+              "top": 315,
+              "width": 170,
+              "height": 19,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Tap - Login button",
+      "tasks": [
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "http://192.168.72.44/NCTS-SIT/Login.aspx",
+            "size": {
+              "width": 1265,
+              "height": 720,
+              "dpr": 1.0000000298023224
+            }
+          },
+          "prompt": "Login button",
+          "response": {
+            "elements": [
+              {
+                "id": "kfblh"
+              }
+            ]
+          },
+          "element": {
+            "id": "kfblh",
+            "indexId": 11,
+            "center": [
+              852,
+              379
+            ],
+            "rect": {
+              "left": 706,
+              "top": 354,
+              "width": 292,
+              "height": 50,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
